@@ -94,7 +94,7 @@ a:hover {
     background: #000;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     padding: 0.5rem 1rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
@@ -134,10 +134,11 @@ a:hover {
 
 /* Hamburger Menu for Mobile */
 .hamburger {
-    display: none;
+    display: none; /* Hidden on larger screens */
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    z-index: 1100; /* Ensure it's above the overlay */
 }
 
 .bar {
@@ -280,6 +281,11 @@ a:hover {
     font-size: 1.5rem;
     position: relative;
     top: 2px;
+}
+
+.highlight-card p {
+    color: var(--light-text);
+    margin-top: 0;
 }
 
 /* Typewriter Effect */
@@ -451,40 +457,43 @@ a:hover {
     }
 }
 
-/* Responsive */
+/* Responsive Styles */
+
+/* Mobile Styles (max-width: 600px) */
 @media (max-width: 600px) {
     .hero-content h1 {
         font-size: 2rem;
     }
 
-    /* Mobile Menu */
+    /* Mobile Menu Overlay */
     .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #000;
-        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
         width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    .nav-links a {
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .hamburger {
-        display: flex;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
     }
 
     .nav.active .nav-links {
-        max-height: 300px; /* adjust if needed */
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+        padding: 1rem;
+        color: #fff;
     }
 
     .hamburger.active .bar:nth-child(1) {
-        transform: rotate(45deg) translateY(8px);
+        transform: rotate(45deg) translate(5px, 5px);
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -492,7 +501,11 @@ a:hover {
     }
 
     .hamburger.active .bar:nth-child(3) {
-        transform: rotate(-45deg) translateY(-8px);
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .hamburger {
+        display: flex;
     }
 
     .highlight-card h3 {
@@ -507,5 +520,12 @@ a:hover {
     .members-grid {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+/* Tablet Styles (max-width: 768px) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
     }
 }
