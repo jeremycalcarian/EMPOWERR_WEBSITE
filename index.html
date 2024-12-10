@@ -15,7 +15,7 @@
     <!-- Preloader -->
     <div id="preloader">
         <div class="logo-animation">
-            <!-- Split the logo into individual letters as before -->
+            <!-- Letters appear robotically, then dino break, then swoosh to top-left -->
             <span class="logo-letter">E</span>
             <span class="logo-letter">M</span>
             <span class="logo-letter">P</span>
@@ -29,8 +29,9 @@
 
     <header class="header">
         <nav class="nav">
-            <div class="logo">EMPOWERR</div>
-            <div class="hamburger" id="hamburger">
+            <!-- Logo is initially hidden, will fade in after swoosh -->
+            <div class="logo hidden">EMPOWERR</div>
+            <div class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -64,7 +65,7 @@
         </div>
     </section>
 
-    <!-- Highlights Section (example with typewriter effect) -->
+    <!-- Highlights Section -->
     <section class="highlights-section">
         <div class="container highlights-grid">
             <div class="highlight-card">
@@ -91,3 +92,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
