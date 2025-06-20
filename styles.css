@@ -229,6 +229,38 @@
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+/* === Mobile Nav (≤768 px) === */
+@media (max-width: 768px) {
+
+    /* show the three bars */
+    .hamburger {
+      display: flex;
+    }
+  
+    /* hide links by default on mobile */
+    .nav-links {
+      position: absolute;
+      top: 100%;              /* right under the bar */
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      gap: 0;
+      background: var(--bg-color);
+      border-bottom: 1px solid var(--light-text);
+      display: none;
+    }
+    .nav-links li { border-top: 1px solid var(--section-bg); }
+    .nav-links a { padding: 0.85rem 1rem; display: block; }
+  
+    /* when nav gets .active from JS ↓ show the menu */
+    .nav.active .nav-links { display: flex; }
+  
+    /* bar-to-X animation (optional) */
+    .hamburger.active .bar:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .hamburger.active .bar:nth-child(2){opacity:0;}
+    .hamburger.active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+  }
+  
 
   
   /*-----------------------------------
