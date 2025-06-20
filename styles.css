@@ -756,3 +756,36 @@ Logo Click Effect
   75%  { transform: translate( 20px,  25px) scale(1.02); }
   100% { transform: translate(  0px,   0px) scale(1); }
 }
+
+/* ==========  Mobile clean-up for ABOUT page  ========== */
+
+/* 1) Collapse stats grid in two steps */
+@media (max-width: 600px) {
+    .about-stats-section .stats-grid {
+      grid-template-columns: repeat(2, 1fr);   /* two cards */
+    }
+  }
+  @media (max-width: 400px) {
+    .about-stats-section .stats-grid {
+      grid-template-columns: 1fr;              /* single column */
+    }
+  }
+  
+  /* 2) Make sure every card shrinks with the grid */
+  .about-stats-section .stat-card {
+    min-width: 0;              /* let it get narrower than 180 px */
+    word-wrap: break-word;     /* long labels wrap instead of overflow */
+  }
+  
+  /* 3) Safety: never allow any .container wider than the viewport */
+  @media (max-width: 480px) {
+    .container {
+      max-width: 100%;
+      padding-left: .75rem;
+      padding-right: .75rem;
+    }
+  }
+  
+  /* 4) Ensure code window scrolls inside itself, not the page */
+  .code-window pre { overflow-x: auto; }
+  
