@@ -789,3 +789,27 @@ Logo Click Effect
   /* 4) Ensure code window scrolls inside itself, not the page */
   .code-window pre { overflow-x: auto; }
   
+
+  /*Rule for mobile so stats do not take two lines*/ 
+  /* keep big green numbers on ONE line and let them scale down */
+@media (max-width: 480px) {
+    .about-stats-section .stat-card h3 {
+      /* prevent line-wrap */
+      white-space: nowrap;
+  
+      /* flex keeps the digits and “+” side-by-side, baseline-aligned */
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.15em;
+  
+      /* responsive size: never larger than 8 vw, never smaller than 1.8 rem */
+      font-size: clamp(1.8rem, 8vw, 2.5rem);
+      line-height: 1;            /* remove extra vertical space */
+    }
+  
+    /* optional: shrink the plus a bit so it doesn’t dominate */
+    .about-stats-section .stat-card .plus {
+      font-size: 0.7em;          /* 70 % of the digits’ height */
+    }
+  }
+  
