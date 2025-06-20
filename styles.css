@@ -914,7 +914,7 @@ Logo Click Effect
   .step-text span {
     display: inline-block;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
     animation: stepFadeUp 0.6s ease-out forwards;
   }
   
@@ -954,4 +954,86 @@ Logo Click Effect
     line-height: 1.6;
     max-width: 700px;
   }
+
+  /* — Referral Deal Section — */
+.referral-deal {
+    background: var(--section-bg);
+    padding: 3rem 0;
+  }
+  
+  .referral-deal .section-heading {
+    color: var(--primary-color);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .referral-deal .lead {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .referral-deal .highlight-points {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .referral-deal .highlight-points li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  .referral-deal .highlight-points li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+  
+  .referral-deal .btn-tier {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    padding: 0.85rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .referral-deal .btn-tier:hover {
+    background: #0fb94e;
+    transform: translateY(-3px);
+  }
+  
+  /* small screens tweak */
+  @media (max-width: 480px) {
+    .referral-deal .section-heading {
+      font-size: 1.8rem;
+    }
+    .referral-deal .lead,
+    .referral-deal .highlight-points li {
+      font-size: 0.95rem;
+    }
+    .referral-deal .btn-tier {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
   
