@@ -66,73 +66,7 @@ window.addEventListener('load', () => {
       });
     }
   
-    /* ---------- 2-D  Leadership Awards Code Window ---------- */
-    (function awardsTypewriter(){
-      const awardsLines = [
-        '// Leadership Awards from:',
-        'const awards = [',
-        '  "United States Department of Education",',
-        '  "United Nations",',
-        '  "Kroger Co.",',
-        '  "Maryland Governor\'s Office on Service and Volunteerism",',
-        '  "Society for Industrial and Applied Mathematics",',
-        '  "Herald Mail",',
-        '  "United States Marine Corps",',
-        '];'
-      ];
-      const codeBlock = document.getElementById('code-block');
-      const execBtn   = document.getElementById('execute-btn');
-      const container = document.querySelector('.leadership-code-section .container');
-      if (!codeBlock || !execBtn || !container) return;
-  
-      let line = 0;
-      const typeLine = () => {
-        if (line >= awardsLines.length) {
-          document.querySelector('.execute-container').style.display = 'block';
-          return;
-        }
-        const text = awardsLines[line++] + '\n';
-        let char = 0;
-        (function typeChar() {
-          if (char < text.length) {
-            codeBlock.textContent += text[char++];
-            setTimeout(typeChar, 40);
-          } else {
-            setTimeout(typeLine, 200);
-          }
-        })();
-      };
-      setTimeout(typeLine, 300);
-  
-      execBtn.addEventListener('click', () => {
-        // hide code window & button
-        container.querySelector('.code-window').style.display = 'none';
-        execBtn.parentElement.style.display = 'none';
-  
-        // summary
-        const p = document.createElement('p');
-        p.className = 'awards-summary';
-        p.textContent =
-          "EMPOWERR's leadership has been recognized and awarded by these organizations over the past 5 years:";
-        container.appendChild(p);
-  
-        // marquee slider
-        const list = [
-          'United States Department of Education','United Nations','Kroger Co.',
-          "Maryland Governor's Office on Service and Volunteerism",
-          'Society for Industrial and Applied Mathematics','Herald Mail',
-          'United States Marine Corps'
-        ];
-        const slider = document.createElement('div');
-        slider.className = 'award-slider active';
-        slider.innerHTML = [...list, ...list].map(t=>`<span>${t}</span>`).join('');
-        const wrap = document.createElement('div');
-        wrap.className = 'slider-wrap';
-        wrap.appendChild(slider);
-        container.appendChild(wrap);
-      });
-    })();
-  
+
     /* ---------- 2-E  Nav Logo Click (back to home) ---------- */
     const navLogo = document.querySelector('.nav .logo');
     navLogo?.addEventListener('click', () => {
@@ -187,4 +121,9 @@ window.addEventListener('load', () => {
     })();
   
   }); // end DOMContentLoaded
+  /* ----------  Fancy awards marquee duplication ---------- */
+/* Duplicate marquee content for seamless loop */
+const track = document.querySelector('.awards-track');
+if (track) track.innerHTML += track.innerHTML;
+
   

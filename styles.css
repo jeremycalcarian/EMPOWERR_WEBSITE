@@ -277,17 +277,6 @@
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-color);
-    counter-increment: section;
-  }
-  .section-heading::before {
-    content: counter(section, decimal-leading-zero);
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    opacity: 0.6;
   }
   
   /*-----------------------------------
@@ -811,5 +800,64 @@ Logo Click Effect
     .about-stats-section .stat-card .plus {
       font-size: 0.7em;          /* 70 % of the digits’ height */
     }
+  }
+  /* ===== Elegant Leadership Awards Marquee ===== */
+.leadership-awards {
+    background: var(--section-bg);
+    padding: 4rem 0;
+  }
+  
+  /* wrapper with edge-fade */
+  .awards-marquee {
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right,
+                  transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+                  transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+  
+  /* scrolling row */
+  .awards-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: awards-scroll 24s linear infinite;
+    font-family: "Playfair Display", "Times New Roman", serif; /* graceful serif */
+  }
+  
+  .awards-track span {
+    flex: 0 0 auto;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--light-text);          /* soft grey */
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    position: relative;
+    text-shadow: 0 0 6px rgba(255,255,255,0.05); /* subtle glow */
+  }
+  
+  .awards-track span:not(:last-child)::after {
+    content: '◆';
+    margin-left: 3rem;
+    color: var(--section-bg);
+    opacity: 0.4;                      /* muted separator */
+    font-size: 0.8em;
+  }
+  
+  @keyframes awards-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  
+  /* pause on hover */
+  .awards-marquee:hover .awards-track {
+    animation-play-state: paused;
+  }
+  
+  /* mobile tuning */
+  @media (max-width: 480px) {
+    .awards-track span { font-size: 0.95rem; }
+    .awards-track { gap: 2rem; }
   }
   
