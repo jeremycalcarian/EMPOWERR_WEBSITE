@@ -66,7 +66,7 @@
     transition: color 0.3s ease;
   }
   a:hover {
-    color: #0fb94e;
+    color: white;
   }
   
   .container {
@@ -272,7 +272,7 @@
   }
   .section-heading {
     position: relative;
-    padding-left: 3rem;
+    padding-left: 2rem;
     margin: 0 0 1.5rem;
     font-size: 2rem;
     font-weight: 700;
@@ -859,5 +859,88 @@ Logo Click Effect
   @media (max-width: 480px) {
     .awards-track span { font-size: 0.95rem; }
     .awards-track { gap: 2rem; }
+  }
+  
+  /*Register CSS */
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+  }
+  
+  .partner-name {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #c2fbd7;
+  }
+  
+  .hero-tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  /* Fade-up animation for subtitle */
+@keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Subtitle animation */
+.animate-subtitle {
+    opacity: 0;
+    animation: fadeUp 1.2s ease-out forwards;
+    animation-delay: 0.6s;
+  }
+  
+  /* Step-by-step word animation (starts *after* subtitle) */
+  .step-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: stepFadeUp 0.6s ease-out forwards;
+  }
+  
+  /* Correctly delay each word based on subtitle ending at 1.8s */
+  .step-text span:nth-child(1) { animation-delay: 2.0s; }
+  .step-text span:nth-child(2) { animation-delay: 2.2s; }
+  .step-text span:nth-child(3) { animation-delay: 2.4s; }
+  .step-text span:nth-child(4) { animation-delay: 2.6s; }
+  .step-text span:nth-child(5) { animation-delay: 2.8s; }
+  
+  @keyframes stepFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .tier-card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tier-features {
+    flex-grow: 1;    /* lets the features list expand to fill available space */
+  }
+  
+  .btn-tier {
+    margin-top: auto; /* pushes the button to the bottom */
   }
   

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register – EMPOWERR 5K</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Pricing Tiers Styles */
+    .pricing-tiers { padding: 4rem 0; background: var(--section-bg); }
+    .tier-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 2rem; }
+    .tier-card { background: rgba(20,20,20,0.6); border: 1px solid #00cc88; border-radius: 12px; padding: 2rem; text-align: center; color: var(--text-color); position: relative; }
+    .tier-card.highlight { border-color: #00ff88; box-shadow: 0 0 8px #00ff88; }
+    .tier-header { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; }
+    .tier-price { font-size: 2rem; font-weight: 700; margin: 0.5rem 0; color: #00ff88; }
+    .tier-features { list-style: none; padding: 0; margin: 1.5rem 0; text-align: left; }
+    .tier-features li { margin-bottom: 0.75rem; }
+    .btn-tier { display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #00cc88; color: #000; font-weight: 600; border-radius: 6px; text-decoration: none; transition: background 0.2s ease; }
+    .btn-tier:hover { background: #00ff88; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">EMPOWERR</a>
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="gallery.html">Photo Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" style="background-image: url('images/5k-banner.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">EMPOWERR 5K</h1>
+      <p class="hero-subtitle animate-subtitle">In Partnership with <span class="partner-name">Rooted</span></p>
+      <p class="hero-tagline step-text">
+        <span>Turn</span>
+        <span>every</span>
+        <span>step</span>
+        <span>into</span>
+        <span>impact.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section register-intro">
+    <div class="container">
+      <h2 class="section-heading">Be Part of Something Bigger</h2>
+      <p class="lead">
+        Since 2020, <strong>EMPOWERR</strong> has empowered youth across communities through fundraising, partnerships, and hands-on service. Now, we're expanding our reach by registering as a <strong>501(c)(3)</strong> nonprofit — and this 5K is a major milestone in that journey. Your participation fuels our mission.
+      </p>
+
+      <p class="lead">
+        <strong>Rooted</strong>, a newly formed group, is on a mission to spotlight community challenges through app development. Funds raised from this event will help bring their tech solutions to life.
+      </p>
+
+      <p class="lead">
+        By signing up, you're not just joining a race — you're investing in youth-driven change. Bring a friend. Bring the energy. Make it count.
+      </p>
+
+      <ul class="highlight-points modern-icons">
+        <li><strong>Date:</strong> July 16, 2025</li>
+        <li><strong>Location:</strong> Hagerstown City Park (in-person) + Virtual Option</li>
+        <li><strong>Includes:</strong> T-shirt, bib, refreshments, and prize entries</li>
+        <li><strong>Impact:</strong> Supports student-led local projects and app development</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- Pricing Tiers -->
+  <section class="section pricing-tiers">
+    <div class="container">
+      <h2 class="section-heading">Choose Your Experience</h2>
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="tier-header">Tier 1: Race Entry</div>
+          <div class="tier-price">$20</div>
+          <ul class="tier-features">
+            <li>Official race entry</li>
+            <li>Physical Bib</li>
+            <li>Post-event photo gallery access</li>
+          </ul>
+          <a href="https://your-form-link.com?tier=1" class="btn-tier">Select</a>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-header">Tier 2: Race + Tee</div>
+          <div class="tier-price">$40</div>
+          <ul class="tier-features">
+            <li>Everything in Tier 1</li>
+            <li>Official event T-shirt (pre-order)</li>
+            <li>Swag pack</li>
+          </ul>
+          <a href="https://your-form-link.com?tier=2" class="btn-tier">Select</a>
+        </div>
+
+        <div class="tier-card highlight">
+          <div class="tier-header">Tier 3: VIP Supporter</div>
+          <div class="tier-price">$50</div>
+          <ul class="tier-features">
+            <li>Everything in Tier 2</li>
+            <li>Featured in our post-recap media</li>
+            <li>Entered into a giftcard giveaway</li>
+            <li>Just an excuse to donate more to our cause!</li>
+          </ul>
+          <a href="https://your-form-link.com?tier=3" class="btn-tier">Select</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why-join">
+    <div class="container">
+      <h2 class="section-heading">Why Join the EMPOWERR 5K?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <h4>Community Impact</h4>
+          <p>Every dollar raised fuels youth-led service projects, from education drives to food donations.</p>
+        </div>
+        <div class="why-card">
+          <h4>Fun & Festive</h4>
+          <p>Music, energy, and community vibes — it’s more than a race, it’s a celebration of change.</p>
+        </div>
+        <div class="why-card">
+          <h4>All Levels Welcome</h4>
+          <p>Run, walk, or cheer from the sidelines — everyone has a role. Show up your way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2020–2025 EMPOWERR. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
