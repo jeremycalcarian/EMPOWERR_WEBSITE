@@ -184,6 +184,52 @@
     background: #0fb94e;
     transform: translateY(-3px);
   }
+  /* ===== Mobile Nav (≤768 px) ===== */
+@media (max-width: 768px) {
+  /* 1. Show the hamburger */
+  .hamburger { 
+    display: flex;                /* was none */
+  }
+
+  /* 2. Hide the links until the hamburger is tapped */
+  .nav-links {
+    position: absolute;
+    top: 100%;            /* just below the nav bar */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--light-text);
+    display: none;        /* hide by default on mobile */
+  }
+
+  .nav-links li {
+    border-top: 1px solid var(--section-bg);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.85rem 1rem;
+  }
+
+  /* 3. When .nav has .active (set by JS), show the menu */
+  .nav.active .nav-links {
+    display: flex;
+  }
+
+  /* 4. Add a simple “X” animation (optional) */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
   
   /*-----------------------------------
     SECTION NUMBERING

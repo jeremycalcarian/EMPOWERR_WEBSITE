@@ -226,6 +226,12 @@ for (let i = 0; i < 12; i++) {
   circle.style.left = `${Math.random()*90}vw`;
   bg.appendChild(circle);
 }
+//Hamburger Menu Toggle
+hamburger.addEventListener('click', () => {
+  const isActive = hamburger.classList.toggle('active');
+  nav.classList.toggle('active');           // keeps nav-links hidden/shown
+  hamburger.setAttribute('aria-expanded', isActive);
+});
 
   
   
