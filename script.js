@@ -134,7 +134,7 @@ window.addEventListener('load', () => {
       const summary = document.createElement('p');
       summary.className = 'awards-summary';
       summary.textContent =
-        "EMPOWERR’s leadership has been recognized and awarded by these organizations over the past 5 years:";
+        "EMPOWERR's leadership has been recognized and awarded by these organizations over the past 5 years:";
       container.appendChild(summary);
   
       // Build marquee slider
@@ -142,7 +142,7 @@ window.addEventListener('load', () => {
         'United States Department of Education',
         'United Nations',
         'Kroger Co.',
-        'Maryland Governor’s Office on Service and Volunteerism',
+        "Maryland Governor's Office on Service and Volunteerism",
         'Society for Industrial and Applied Mathematics',
         'Herald Mail',
         'United States Marine Corps'
@@ -160,4 +160,72 @@ window.addEventListener('load', () => {
       container.appendChild(wrap);
     });
   });
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLogo = document.querySelector('.nav .logo');
+    if (navLogo) {
+      navLogo.style.cursor = 'pointer';
+      navLogo.addEventListener('click', () => {
+        navLogo.classList.add('clicked');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 200); // 200ms for the color effect
+      });
+    }
+  });
+
+  // -------------------- 
+  // Projects Glass Tilt Effect
+  // --------------------
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards   = document.querySelectorAll('.glass-card');
+    const maxTilt = 10;    // lower tilt angle for gentler movement
+  
+    cards.forEach(card => {
+      let ticking = false;
+      let targetX = 0, targetY = 0;
+  
+      card.addEventListener('mousemove', e => {
+        const { left, top, width, height } = card.getBoundingClientRect();
+        const x = (e.clientX - left)/width  - 0.5;  // -0.5→+0.5
+        const y = (e.clientY - top )/height - 0.5;
+  
+        targetY =  x * maxTilt;   // horizontal → Y-axis rotation
+        targetX = -y * maxTilt;   // vertical   → X-axis rotation
+  
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            card.style.transform = `scale(1.03) rotateX(${targetX}deg) rotateY(${targetY}deg)`;
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+  
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';  // resets to flat
+      });
+    });
+  });
+  const bg = document.querySelector('.projects-bg-particles');
+const colors = ['#00ff8899','#00ff8844','#00ff8822','#00ff8855'];
+for (let i = 0; i < 12; i++) {
+  const size = 40 + Math.random()*100;
+  const circle = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  circle.setAttribute('class','particle');
+  circle.setAttribute('data-i', i);
+  circle.setAttribute('width', size);
+  circle.setAttribute('height', size);
+  const c = document.createElementNS(circle.namespaceURI,'circle');
+  c.setAttribute('cx', size/2);
+  c.setAttribute('cy', size/2);
+  c.setAttribute('r', size/2 * 0.8);
+  c.setAttribute('fill', colors[i % colors.length]);
+  circle.appendChild(c);
+  // random position
+  circle.style.top  = `${Math.random()*90}vh`;
+  circle.style.left = `${Math.random()*90}vw`;
+  bg.appendChild(circle);
+}
+
+  
   

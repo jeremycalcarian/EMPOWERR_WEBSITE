@@ -415,3 +415,266 @@
     to   { transform: translateX(-50%); }
   }
   
+/* 
+Logo Click Effect 
+*/
+.nav .logo:hover {
+  color: var(--primary-color) !important;
+  transition: color 0.2s;
+}
+
+/* Modern Projects Section Styles */
+.modern-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.modern-card {
+  background: #181818;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 1px solid #232323;
+}
+.modern-card:hover {
+  transform: translateY(-6px) scale(1.025);
+  box-shadow: 0 8px 32px rgba(22,231,88,0.10), 0 2px 8px rgba(0,0,0,0.18);
+  border-color: var(--primary-color);
+}
+.card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1.1rem;
+  color: var(--primary-color);
+  filter: drop-shadow(0 2px 6px #16e75833);
+}
+.modern-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+.modern-card p {
+  color: var(--light-text);
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .modern-projects {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .modern-card {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+  }
+}
+
+/* Ultra Modern Projects Section Styles */
+.ultra-modern-projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem 2.5rem;
+  margin-top: 2.5rem;
+}
+.ultra-card {
+  background: #181818;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 340px;
+  min-width: 260px;
+  flex: 1 1 300px;
+  border: 1px solid #232323;
+  transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
+}
+.ultra-card:hover {
+  box-shadow: 0 8px 32px rgba(22,231,88,0.10), 0 2px 8px rgba(0,0,0,0.18);
+  border-color: var(--primary-color);
+  transform: translateY(-4px) scale(1.018);
+}
+.ultra-icon {
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ultra-icon svg {
+  display: block;
+  width: 36px;
+  height: 36px;
+  stroke: var(--primary-color);
+}
+.ultra-title {
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+.ultra-desc {
+  color: #bbbbbb;
+  font-size: 0.93rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+.ultra-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .ultra-modern-projects {
+    gap: 1.2rem 0.7rem;
+  }
+  .ultra-card {
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 600px) {
+  .ultra-modern-projects {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .ultra-card {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+  }
+}
+.projects-glass-section {
+  position: relative;
+  padding: 0 0 3rem;
+  z-index: 1;
+}
+.projects-glass-grid {
+  display: grid;
+  gap: 2.2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 0;
+  grid-template-columns: 1fr;
+  perspective: 1000px;
+  overflow: visible;
+}
+/* Make sure grid itself supplies perspective */
+.projects-glass-grid {
+  perspective: 800px;     /* ← bigger depth = more obvious tilt  */
+  perspective-origin: 50% 50%;
+  overflow: visible;
+}
+
+/* speed-up transition so the tilt tracks the mouse tightly */
+.glass-card {
+  /* initial hidden state */
+  opacity: 0;
+  transform: translateY(50px) scale(0.98);   /* JS will overwrite this */
+
+  /* fade-in (opacity only) */
+  animation: glass-fadein 0.9s ease forwards;
+  animation-delay: calc(var(--i,1) * 0.18s);
+}
+
+
+@media (min-width: 600px) {
+  .projects-glass-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (min-width: 1000px) {
+  .projects-glass-grid { grid-template-columns: repeat(3,1fr); }
+}
+
+.glass-card {
+  position: relative;
+  background: rgba(20,20,20,0.55);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,255,136,0.08), 0 1.5px 8px rgba(0,0,0,0.18);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(0,255,136,0.13);
+  padding: 2.5rem 1.5rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 320px;
+  overflow: hidden;
+
+  /* TILT PREP */
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+  transition:
+    transform 0.32s cubic-bezier(.4,1.4,.6,1),
+    box-shadow 0.32s cubic-bezier(.4,1.4,.6,1),
+    border-color 0.32s cubic-bezier(.4,1.4,.6,1),
+    opacity 0.7s cubic-bezier(.4,1.4,.6,1);
+
+  /* SCROLL-IN */
+  opacity: 0;
+  transform: translateY(60px) scale(0.98);
+  animation: glass-fadein 1.1s cubic-bezier(.4,1.4,.6,1) forwards;
+  animation-delay: calc(var(--i,1) * 0.18s);
+}
+@media (hover: hover) and (pointer: fine) {
+  .glass-card:hover {
+    /* only adjust box-shadow & border on hover—no scale! */
+    box-shadow: 0 0 0 3px #00ff88, 0 8px 32px rgba(0,255,136,0.6), 0 2px 8px rgba(0,0,0,0.18);
+    border-color: #00ff88;
+    z-index: 2;
+  }
+}
+@keyframes glass-fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* make sure this is at the very top of your particle CSS */
+.projects-bg-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* common particle styling & animation */
+.particle {
+  position: absolute;
+  opacity: 0.25;
+  filter: blur(3px);
+  animation: drift 25s ease-in-out infinite;
+}
+
+/* stagger each by its data-i attribute */
+.particle[data-i="0"] { top: 10vh;  left:  8vw;  animation-delay: 0s;  }
+.particle[data-i="1"] { top: 30vh;  left: 85vw;  animation-delay: 3s;  }
+.particle[data-i="2"] { top: 75vh;  left: 20vw;  animation-delay: 6s;  }
+.particle[data-i="3"] { top:  5vh;  left: 55vw;  animation-delay: 9s;  }
+
+.particle[data-i="4"] { top: 45vh;  left: 15vw;  animation-delay:12s; }
+.particle[data-i="5"] { top: 20vh;  left: 70vw;  animation-delay:15s; }
+.particle[data-i="6"] { top: 80vh;  left: 40vw;  animation-delay:18s; }
+.particle[data-i="7"] { top: 60vh;  left: 90vw;  animation-delay:21s; }
+
+/* the drift keyframe: slow, smooth floating + subtle scale changes */
+@keyframes drift {
+  0%   { transform: translate(  0px,   0px) scale(1); }
+  25%  { transform: translate( 15px, -20px) scale(1.05); }
+  50%  { transform: translate(-25px,  15px) scale(0.95); }
+  75%  { transform: translate( 20px,  25px) scale(1.02); }
+  100% { transform: translate(  0px,   0px) scale(1); }
+}
