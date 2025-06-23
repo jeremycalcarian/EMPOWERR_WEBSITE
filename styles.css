@@ -1036,45 +1036,52 @@ Logo Click Effect
     }
   }
   
-/* — Hero ribbon — */
-.hero {
-    position: relative; /* make ribbon position relative to this */
-  }
-  .hero-ribbon {
-    position: absolute;
-    top: 1rem;
-    right: -2rem;
-    transform: rotate(45deg);
-    background: #00ff88;
-    color: #000;
-    padding: 0.5rem 2rem;
-    font-size: 0.875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    animation: ribbonSlideIn 1s ease-out forwards;
-    opacity: 0;
+/* ----------  HERO STATUS PILL  ---------- */
+.status-pill{
+    display:inline-block;
+    margin:0.6rem auto 1.6rem;
+    padding:0.35rem 1.1rem;
+    max-width:90vw;        /* guarantees it can’t overflow on phones  */
+    font:600 0.9rem/1.3 "Courier New", monospace;
+    color:#0e0e0e;
+    background:#16e758;
+    border-radius:999px;
+    box-shadow:0 3px 10px rgb(0 0 0 / .35);
+    text-align:center;
+    white-space:normal;     /* allow wrapping when needed          */
+    word-break:break-word;  /* graceful wrap on very small screens */
+    position:relative;
   }
   
-  /* ribbon entrance */
-  @keyframes ribbonSlideIn {
-    to {
-      opacity: 1;
-      transform: rotate(45deg) translate(0, 0);
-    }
-    from {
-      opacity: 0;
-      transform: rotate(45deg) translate(50px, -50px);
-    }
+  /* blinking “cursor” ▌ */
+  .status-pill .cursor{
+    display:inline-block;
+    width:2px; height:1.05em;
+    background:#0e0e0e;
+    margin-left:4px;
+    animation:blink 0.8s step-end infinite;
   }
   
-  /* tweak on small screens */
-  @media (max-width: 481px) {
-    .hero-ribbon {
-      top: 0.5rem;
-      right: -1rem;
-      padding: 0.4rem 1.4rem;
-      font-size: 0.75rem;
-    }
-  }
+  @keyframes blink{50%{opacity:0;}}
   
+  /* ─────  Mobile fix for the type-out badge  ───── */
+@media (max-width: 480px) {
+
+  /* 1) shrink the text and allow a second line */
+  .hero-badge{
+    font-size: 0.5rem;         /* a bit smaller than desktop      */
+    line-height: 1.00;
+    word-break: break-word;     /* wrap mid-word if it must        */
+
+    /* 2) re-run the typing animation, but cap the width to the phone */
+    width: 0;                   /* start closed again              */
+    animation: typingMobile 5s steps(53) 1s forwards,
+               blink-caret 0.75s step-end infinite;
+  }
+
+  /* 3) mobile-friendly typing: stop at 90 vw or 53 ch, whichever is smaller */
+  @keyframes typingMobile{
+    from{ width: 0; }
+    to  { width: min(90vw, 53ch); }
+  }
+}
