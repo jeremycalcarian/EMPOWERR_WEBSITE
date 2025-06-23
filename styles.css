@@ -1069,7 +1069,7 @@ Logo Click Effect
   }
   
   /* tweak on small screens */
-  @media (max-width: 600px) {
+  @media (max-width: 481px) {
     .hero-ribbon {
       top: 0.5rem;
       right: -1rem;
