@@ -1,66 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>EMPOWERR - Photo Gallery</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EMPOWERR - Photo Gallery</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">EMPOWERR</div>
-            <div class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-links" id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="members.html">Members</a></li>
-                <li><a href="gallery.html" class="active">Photo Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">EMPOWERR</div>
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="gallery.html" class="active">Photo Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>Photo Gallery</h1>
-            <p>A glimpse of our journey.</p>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Photo Gallery</h1>
+      <p>A glimpse of our journey at EMPOWERR.</p>
+    </div>
+  </section>
+
+  <section class="gallery-scroll-section">
+    <div class="container">
+      <h2 class="gallery-title">Our Journey in Frames</h2>
+      <div class="gallery-scroll-container" id="gallery-scroll">
+        <div class="gallery-card">
+            <img src="images/gallery20.JPG" alt="Impact moment">
+            <div class="overlay">
+              <h3>Headshots</h3>
+              <p>Headshot Team Photo</p>
+            </div>
+          </div>
+        <div class="gallery-card">
+          <img src="images/gallery12.jpg" alt="Event kickoff">
+          <div class="overlay">
+            <h3>Hagerstown Boxcars Partnership </h3>
+            <p>Photo with the mascot</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Slideshow Section -->
-    <section class="gallery-section">
-        <div class="container slideshow-container">
-            <div class="slide fade">
-                <img src="images/gallery1.jpg" alt="Gallery Image 1">
-            </div>
-            <div class="slide fade">
-                <img src="images/gallery2.jpg" alt="Gallery Image 2">
-            </div>
-            <div class="slide fade">
-                <img src="images/gallery3.jpg" alt="Gallery Image 3">
-            </div>
-            <div class="slide fade">
-                <img src="images/gallery4.jpg" alt="Gallery Image 4">
-            </div>
-            <!-- Add more slides as needed -->
+        <div class="gallery-card">
+          <img src="images/gallery11.jpeg" alt="Volunteers in action">
+          <div class="overlay">
+            <h3>Team Dinner</h3>
+            <p>Post-event team dinner</p>
+          </div>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; 2020-2024 EMPOWERR. All rights reserved.</p>
+        <div class="gallery-card">
+          <img src="images/gallery1.jpg" alt="Impact moment">
+          <div class="overlay">
+            <h3>Debut Event</h3>
+            <p>A drone shot of our first event captured in 2020</p>
+          </div>
         </div>
-    </footer>
+        <div class="gallery-card">
+            <img src="images/gallery10.jpeg" alt="Impact moment">
+            <div class="overlay">
+              <h3>Trunk Event</h3>
+              <p>Team Photo at St Anns Church</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery15.jpg" alt="Impact moment">
+            <div class="overlay">
+              <h3>Food Drive Event</h3>
+              <p>Delivering and packing meals for Hagerstown homeless</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery14.jpg" alt="Impact moment">
+            <div class="overlay">
+              <h3>Bake Sale Event</h3>
+              <p>Breast Cancer fundrasier</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery13.jpg" alt="Impact moment">
+            <div class="overlay">
+              <h3>KeepItWarm Year 1</h3>
+              <p>An ongoing winter project since founding date</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery17.jpg" alt="Impact moment">
+            <div class="overlay">
+              <h3>Food Kitchen Event</h3>
+              <p>Helping with meals</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery16.jpg" alt="Impact moment">
+            <div class="overlay">
+              <h3>Trunk Event</h3>
+              <p>Yearly Event</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery18.jpg" alt="Impact moment">
+            <div class="overlay">
+              <h3>Christmas Advent</h3>
+              <p>Winter Yearly Event</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery2.JPG" alt="Impact moment">
+            <div class="overlay">
+              <h3>Basketball Tournament Team Photo</h3>
+              <p>Partnership with the Boys and Girls Club</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery4.JPG" alt="Impact moment">
+            <div class="overlay">
+              <h3>Tournament Photo</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery5.JPG" alt="Impact moment">
+            <div class="overlay">
+              <h3>Tournament Photo</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery6.JPG" alt="Impact moment">
+            <div class="overlay">
+              <h3>Tournament Photo</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery7.JPG" alt="Impact moment">
+            <div class="overlay">
+              <h3>Tournament Photo</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery21.jpg" alt="Impact moment">
+            <div class="overlay">
+              <h3>Halloween Yearly Event</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery19.JPEG" alt="Impact moment">
+            <div class="overlay">
+              <h3>Vollyball Tournemant</h3>
+              <p>Team Photo</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery8.JPG" alt="Impact moment">
+            <div class="overlay">
+              <h3>Winter Coat Giveaway</h3>
+              <p>Partnered by Hockaday and Co. and JCPenny</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery9.PNG" alt="Impact moment">
+            <div class="overlay">
+              <h3>Christmas Advent</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/gallery3.JPG" alt="Impact moment">
+            <div class="overlay">
+              <h3>Founding Team</h3>
+              <p>First group photo at our debut event</p>
+            </div>
+          </div>
 
-    <script src="script.js"></script>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2020-2025 EMPOWERR. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1091,3 +1091,91 @@ Logo Click Effect
     }
   }
   
+  /* ========== Tape‑Style Gallery (final clean version) ========== */
+/* ========== Gallery (sleek version, no tape perforations) ========== */
+
+/* Section heading */
+.gallery-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* Dark band around the strip */
+.gallery-scroll-section {
+  padding: 5.5rem 0.8rem;          /* extra space above & below */
+  background: #111;            /* overall page background */
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Horizontal strip */
+.gallery-scroll-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;             /* height of the strip */
+  overflow-x: auto;            /* still scrollable by wheel/drag */
+  overflow-y: hidden;
+  cursor: grab;
+  background: #1a1a1a;         /* subtle dark interior */
+  scroll-snap-type: none;      /* free‑glide */
+}
+
+/* hide scrollbar but leave wheel scrolling */
+.gallery-scroll-container::-webkit-scrollbar { display: none; }
+.gallery-scroll-container { scrollbar-width: none; -ms-overflow-style: none; }
+
+.gallery-scroll-container:active { cursor: grabbing; }
+
+/* Card frames */
+.gallery-card {
+  flex: 0 0 500px;
+  height: 325px;
+  position: relative;
+  border: 4px solid #333;
+  background: #000;
+  box-shadow:
+    inset 0 0 10px rgba(0,0,0,0.8),
+    0 5px 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+.gallery-card:hover { transform: scale(1.05); }
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 30 % overlay: title always top; caption below (if any) */
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  transform: translateY(100%);
+  transition: transform 0.3s;
+  display: grid;
+  grid-template-rows: auto auto;   /* row 1 = title, row 2 = caption (optional) */
+  gap: 0.25rem;
+  padding: 0.5rem;
+  align-content: start;            /* keep rows pinned to top of overlay */
+}
+
+.gallery-card:hover .overlay { transform: translateY(0); }
+
+.overlay h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
