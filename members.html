@@ -1,114 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>EMPOWERR - Members</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>EMPOWERR – Members</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"><!-- keep your global styles -->
+
+  <style>
+    /* ---------- base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+  color: #111;
+  line-height: 1.4;
+}
+
+header {
+  background: #111;
+  padding: 1rem 0;
+}
+
+header .logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 .6rem;
+  font-size: .95rem;
+}
+
+.nav-links .active {
+  font-weight: 600;
+  border-bottom: 2px solid #00ff88;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 2rem 0 .5rem;
+}
+
+p.sub {
+  opacity: .75;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* ---------- grid ---------- */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  padding-bottom: 4rem;
+}
+
+/* ---------- card ---------- */
+.member-card {
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .07);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+}
+
+.photo {
+  width: 100%;
+  height: 75%; /* keeps the image tall but leaves room for text */
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  padding: 0.8rem 1rem 1rem; /* less white space below */
+}
+
+.member-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: #111;
+}
+
+.role {
+  font-size: .93rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* ---------- mobile tweaks ---------- */
+@media (max-width: 600px) {
+  .photo {
+    height: 200px;
+  }
+}
+
+  </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">EMPOWERR</div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-links" id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" >About Us</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="members.html"class="active">Members</a></li>
-                <li><a href="gallery.html">Photo Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>Our Team</h1>
-            <p>The passionate students and leaders behind EMPOWERR.</p>
+  <!-- ===== Header / Navigation ===== -->
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">EMPOWERR</div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="members.html" class="active">Members</a></li>
+        <li><a href="gallery.html">Photo Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <h1>Our Current Team</h1>
+  <p class="sub">Passionate students and leaders behind EMPOWERR</p>
+
+  <!-- ===== Members Grid ===== -->
+  <div class="container">
+    <div class="members-grid">
+
+      <!-- repeat pattern for all 22 headshots -->
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot1.png" alt="Alex Johnson">
+        <div class="info">
+          <div class="member-name">Alex Johnson</div>
+          <div class="role">President &amp; Founder</div>
         </div>
-    </section>
+      </div>
 
-    <section class="members-section">
-        <div class="container">
-            <h2 class="section-title">Executive Team</h2>
-            <div class="executive-grid">
-                <div class="card member-card">
-                    <img src="images/member-president.jpg" alt="President">
-                    <h3>Alex Johnson</h3>
-                    <p>President & Founder</p>
-                </div>
-                <div class="card member-card">
-                    <img src="images/member-exec1.jpg" alt="Vice President">
-                    <h3>Sarah Lee</h3>
-                    <p>Vice President</p>
-                </div>
-                <div class="card member-card">
-                    <img src="images/member-exec2.jpg" alt="Treasurer">
-                    <h3>Marcus Green</h3>
-                    <p>Treasurer</p>
-                </div>
-                <div class="card member-card">
-                    <img src="images/member-exec3.jpg" alt="Secretary">
-                    <h3>Emily Davis</h3>
-                    <p>Secretary</p>
-                </div>
-            </div>
-
-            <h2 class="section-title">All Members</h2>
-            <div class="members-grid">
-                <!-- Example Member Cards (Repeat up to 30 members) -->
-                <div class="card member-card">
-                    <img src="images/member1.jpg" alt="Member 1">
-                    <h3>John Doe</h3>
-                    <p>Project Lead</p>
-                </div>
-                <div class="card member-card">
-                    <img src="images/member2.jpg" alt="Member 2">
-                    <h3>Jane Smith</h3>
-                    <p>Coordinator</p>
-                </div>
-                <div class="card member-card">
-                    <img src="images/member3.jpg" alt="Member 3">
-                    <h3>Michael Brown</h3>
-                    <p>Volunteer</p>
-                </div>
-                <div class="card member-card">
-                    <img src="images/member4.jpg" alt="Member 4">
-                    <h3>Linda Wilson</h3>
-                    <p>Volunteer</p>
-                </div>
-                <!-- Continue adding members up to 30 -->
-                <!-- Example: -->
-                <div class="card member-card">
-                    <img src="images/member5.jpg" alt="Member 5">
-                    <h3>Robert Taylor</h3>
-                    <p>Volunteer</p>
-                </div>
-                <div class="card member-card">
-                    <img src="images/member6.jpg" alt="Member 6">
-                    <h3>Patricia Martinez</h3>
-                    <p>Volunteer</p>
-                </div>
-                <!-- ... Add more members similarly ... -->
-            </div>
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot2.JPEG" alt="Sarah Lee">
+        <div class="info">
+          <div class="member-name">Sarah Lee</div>
+          <div class="role">Vice President</div>
         </div>
-    </section>
+      </div>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; 2020-2024 EMPOWERR. All rights reserved.</p>
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot3.JPEG" alt="Marcus Green">
+        <div class="info">
+          <div class="member-name">Marcus Green</div>
+          <div class="role">Treasurer</div>
         </div>
-    </footer>
-    <!-- Include the script.js file -->
-    <script src="script.js"></script>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot4.JPEG" alt="Emily Davis">
+        <div class="info">
+          <div class="member-name">Emily Davis</div>
+          <div class="role">Secretary</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot5.JPEG" alt="John Doe">
+        <div class="info">
+          <div class="member-name">John Doe</div>
+          <div class="role">Project Lead</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot6.JPEG" alt="Jane Smith">
+        <div class="info">
+          <div class="member-name">Jane Smith</div>
+          <div class="role">Coordinator</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot7.JPEG" alt="Michael Brown">
+        <div class="info">
+          <div class="member-name">Michael Brown</div>
+          <div class="role">Volunteer</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot8.JPEG" alt="Linda Wilson">
+        <div class="info">
+          <div class="member-name">Linda Wilson</div>
+          <div class="role">Volunteer</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot9.JPEG" alt="Robert Taylor">
+        <div class="info">
+          <div class="member-name">Robert Taylor</div>
+          <div class="role">Event Planner</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot10.JPEG" alt="Patricia Martinez">
+        <div class="info">
+          <div class="member-name">Patricia Martinez</div>
+          <div class="role">Marketing Lead</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot11.JPEG" alt="Daniel Garcia">
+        <div class="info">
+          <div class="member-name">Daniel Garcia</div>
+          <div class="role">Social Media Manager</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot12.JPEG" alt="Amy Chen">
+        <div class="info">
+          <div class="member-name">Amy Chen</div>
+          <div class="role">Outreach Coordinator</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot13.JPEG" alt="Chris Thompson">
+        <div class="info">
+          <div class="member-name">Chris Thompson</div>
+          <div class="role">Logistics Lead</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot14.JPEG" alt="Olivia Harris">
+        <div class="info">
+          <div class="member-name">Olivia Harris</div>
+          <div class="role">Fundraising Chair</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot15.JPEG" alt="Jacob Lee">
+        <div class="info">
+          <div class="member-name">Jacob Lee</div>
+          <div class="role">Volunteer</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot16.JPEG" alt="Sophia Kim">
+        <div class="info">
+          <div class="member-name">Sophia Kim</div>
+          <div class="role">Volunteer</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot17.JPEG" alt="Brian White">
+        <div class="info">
+          <div class="member-name">Brian White</div>
+          <div class="role">Design Lead</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot18.JPEG" alt="Emma Clark">
+        <div class="info">
+          <div class="member-name">Emma Clark</div>
+          <div class="role">Community Engagement</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot19.JPEG" alt="David Scott">
+        <div class="info">
+          <div class="member-name">David Scott</div>
+          <div class="role">Volunteer</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot20.JPEG" alt="Isabella Perez">
+        <div class="info">
+          <div class="member-name">Isabella Perez</div>
+          <div class="role">Volunteer</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot21.JPEG" alt="William Harris">
+        <div class="info">
+          <div class="member-name">William Harris</div>
+          <div class="role">Strategy Advisor</div>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <img class="photo" src="headshots/headshot22.JPEG" alt="Chloe Bennett">
+        <div class="info">
+          <div class="member-name">Chloe Bennett</div>
+          <div class="role">Operations Lead</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
-
