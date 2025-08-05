@@ -1,0 +1,383 @@
+<!-- secure-register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Registration – EMPOWERR 5K</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #333;
+      padding-bottom: 80px; /* leave space for progress bar */
+    }
+    .card {
+      background: #fff;
+      max-width: 480px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 2rem;
+    }
+    .card h1 {
+      margin: 0;
+      font-size: 1.75rem;
+      color: #005bb5;
+    }
+    .card h2 {
+      margin: 0.5rem 0 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #555;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #005bb5;
+      box-shadow: 0 0 0 3px rgba(0,91,181,0.2);
+    }
+    .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between checkbox and text */
+}
+
+.checkbox-label input {
+  width: auto;
+}
+
+    button {
+      width: 100%;
+      padding: 0.85rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    .btn-primary {
+      background: #005bb5;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .btn-primary:hover {
+      background: #004699;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #005bb5;
+      border: 2px solid #005bb5;
+    }
+    .btn-secondary:hover {
+      background: rgba(0,91,181,0.1);
+    }
+  
+    /* Step visibility */
+    .step { display: none; }
+    .step.active { display: block; }
+  
+    /* Progress container */
+    .progress-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #e0e0e0;
+      padding: 1rem 0 0.8rem;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+  
+    /* Progress bar (one-time gradient animation) */
+    .progress-bar {
+      height: 12px;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      background-size: 200% 100%;
+      width: 0%;
+      transition: width 0.6s ease;
+    }
+    .progress-bar.animate-once {
+      animation: gradientOnce 1.2s ease forwards;
+    }
+    @keyframes gradientOnce {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+  
+    /* Step circles */
+    .progress-steps {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+    .progress-steps span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .progress-steps .circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #005bb5;
+      background: #fff;
+      margin-bottom: 0.3rem;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .progress-steps .circle.active {
+      background: #005bb5;
+      box-shadow: 0 0 8px rgba(0, 91, 181, 0.6);
+    }
+    .progress-steps .circle.completed {
+      background: #005bb5;
+    }
+    /* Step header styling */
+.step-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.step-header h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+  color: #005bb5;
+}
+.step-subtitle {
+  font-size: 1rem;
+  color: #555;
+}
+.lock-icon {
+  font-weight: 600;
+}
+
+/* Info & success boxes */
+.info-box, .success-box {
+  background: #f9fbfd;
+  border: 1px solid #d0e2f5;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+.success-box {
+  background: #f6fff9;
+  border: 1px solid #c6f6d5;
+}
+.warning-text {
+  color: #d93025;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Button grouping for step actions */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Empowerr 5K Registration</h1>
+    <h2>In Collaboration with Rooted</h2>
+
+    <!-- Step 1: Registration Form -->
+    <form id="registration-form" class="step active">
+      <label for="hear">How did you hear about us?</label>
+      <select id="hear" name="hear" required>
+        <option value="">Select…</option>
+        <option>Social Media</option>
+        <option>Friend or Family</option>
+        <option>School or Club</option>
+        <option>Community Bulletin</option>
+        <option>Other</option>
+      </select>
+
+      <label for="name">Full Name(s) - Everyone you are registering, including yourself</label>
+      <input id="name" name="name" type="text" required placeholder="Separate multiple names with commas">
+
+      <label for="phone">Phone Number</label>
+      <input id="phone" name="phone" type="tel" required>
+
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="tier">Ticket Type</label>
+      <select id="tier" name="tier" required>
+        <option value="">Select…</option>
+        <option>Adult – $15</option>
+        <option>Double – $24</option>
+        <option>Quad – $44</option>
+      </select>
+
+      <label class="checkbox-label">
+        <input type="checkbox" id="waiver" name="waiver" required>
+        I have read and agree to the <a href="waiver.pdf" target="_blank">Waiver Agreement</a>
+      </label>
+
+      <label for="questions">Questions / Concerns</label>
+      <textarea id="questions" name="questions" rows="4"></textarea>
+
+      <button type="submit" class="btn-primary">Submit Registration</button>
+    </form>
+
+    <!-- Step 2: Payment -->
+<div id="payment-step" class="step">
+  <div class="step-header">
+    <h2><span class="lock-icon">Secure Your Payment</span></h2>
+    <p class="step-subtitle">Please complete your payment to reserve your spot.</p>
+  </div>
+  <div class="info-box">
+    <p><strong>How to Pay:</strong> Donate the ticket amount to our official GoFundMe page.</p>
+    <p class="warning-text">
+      Not donating will prevent you from participating in the event.
+    </p>
+  </div>
+  <div class="btn-group">
+    <button id="gofundme-btn" class="btn-primary">Go to GoFundMe</button>
+    <button id="donated-btn" class="btn-secondary">I've Donated</button>
+  </div>
+</div>
+
+<!-- Step 3: Completion -->
+<div id="completion-step" class="step">
+  <div class="step-header">
+    <h2>Registration Complete</h2>
+    <p class="step-subtitle">Your spot is reserved and confirmed.</p>
+  </div>
+  <div class="success-box">
+    <p>
+      We will verify your donation using your provided name(s) and confirm your spot via email.
+    </p>
+    <p>
+      Thank you for supporting the <strong>Empowerr 5K</strong> in collaboration with <strong>Rooted</strong>.
+    </p>
+  </div>
+  <button id="return-btn" class="btn-primary">Return to Home Page</button>
+</div>
+
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+    <div class="progress-steps">
+      <span>
+        <div class="circle" id="circle-1"></div>
+        Registration
+      </span>
+      <span>
+        <div class="circle" id="circle-2"></div>
+        Payment
+      </span>
+      <span>
+        <div class="circle" id="circle-3"></div>
+        Complete
+      </span>
+    </div>
+    
+  </div>
+
+  <script>
+    const form = document.getElementById('registration-form');
+    const paymentStep = document.getElementById('payment-step');
+    const completionStep = document.getElementById('completion-step');
+    const progressBar = document.getElementById('progress-bar');
+  
+    function setProgress(percent) {
+      progressBar.classList.remove('animate-once');
+      void progressBar.offsetWidth; // force reflow so animation can retrigger
+      progressBar.classList.add('animate-once');
+      progressBar.style.width = percent + '%';
+    }
+  
+    function setStepStatus(step) {
+      const circles = [
+        document.getElementById('circle-1'),
+        document.getElementById('circle-2'),
+        document.getElementById('circle-3')
+      ];
+  
+      circles.forEach((circle, index) => {
+        circle.classList.remove('active', 'completed');
+        if (index < step - 1) {
+          circle.classList.add('completed');
+        } else if (index === step - 1) {
+          circle.classList.add('active');
+        }
+      });
+    }
+  
+    function showStep(step) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      step.classList.add('active');
+    }
+  
+    // Initial step
+    setStepStatus(1);
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+  
+      const data = new FormData();
+      data.append('entry.901783948', form.name.value);
+      data.append('entry.1243249204', form.email.value);
+      data.append('entry.59597137', form.tier.value);
+      data.append('entry.1111111111', form.hear.value);
+      data.append('entry.2222222222', form.phone.value);
+      data.append('entry.3333333333', form.waiver.checked ? 'Agreed' : 'Not Agreed');
+      data.append('entry.4444444444', form.questions.value);
+  
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSeVmwjS0UnQPrpr4trRf2UhKdnpnMcK9Pee-aO-hRa6aAOgqg/formResponse', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: data
+      }).finally(() => {
+        showStep(paymentStep);
+        setProgress(50);
+        setStepStatus(2);
+      });
+    });
+  
+    document.getElementById('gofundme-btn').addEventListener('click', () => {
+      window.open('https://www.gofundme.com/f/empowerr-5k', '_blank', 'noopener');
+    });
+  
+    document.getElementById('donated-btn').addEventListener('click', () => {
+      showStep(completionStep);
+      setProgress(100);
+      setStepStatus(3);
+    });
+  
+    document.getElementById('return-btn').addEventListener('click', () => {
+      window.location.href = 'register.html';
+    });
+  </script>
+  
+  
+</body>
+</html>

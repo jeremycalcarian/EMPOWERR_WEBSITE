@@ -121,63 +121,69 @@ window.addEventListener('load', () => {
     })();
   
   }); // end DOMContentLoaded
-  /* ----------  Fancy awards marquee duplication ---------- */
-/* Duplicate marquee content for seamless loop */
-const track = document.querySelector('.awards-track');
-if (track) track.innerHTML += track.innerHTML;
-/* ===== Smooth endless auto‑scroll ===== */
-/* ===== smooth auto‑scroll (no duplication) ===== */
-window.addEventListener('load', () => {
-  const track = document.getElementById('gallery-scroll');
-  if (!track) return;
-
-  const SPEED      = 2;   // px per frame  (≈30 px / sec)
-  const PAUSE_MS   = 3000;  // resume delay after user interaction
-  let paused       = false;
-  let pauseTimer   = null;
-
-  function autoMove() {
-    if (!paused) {
-      track.scrollLeft += SPEED;
-      // hard‑loop when we hit the end (not seamless, but no duplicates)
-      if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
-        track.scrollLeft = 0;
+  window.addEventListener('load', () => {
+    const track = document.getElementById('gallery-scroll');
+    if (!track) return;
+  
+    const SPEED      = 1.5;   // px per frame (~30 px/sec)
+    const PAUSE_MS   = 3000;  // resume delay after user interaction
+    const END_PAUSE  = 3000;  // pause at the end
+    let paused       = false;
+    let pauseTimer   = null;
+    let atEndPause   = false;
+  
+    function autoMove() {
+      if (!paused) {
+        track.scrollLeft += SPEED;
+  
+        // reached end
+        if (track.scrollLeft >= track.scrollWidth - track.clientWidth && !atEndPause) {
+          paused = true;
+          atEndPause = true;
+          clearTimeout(pauseTimer);
+  
+          pauseTimer = setTimeout(() => {
+            track.scrollLeft = 0; // jump back after end pause
+            paused = false;
+            atEndPause = false;
+          }, END_PAUSE);
+        }
       }
+      requestAnimationFrame(autoMove);
     }
-    requestAnimationFrame(autoMove);
-  }
-  autoMove();
-
-  /* -------- pause helpers -------- */
-  const pause = () => {
-    paused = true;
-    clearTimeout(pauseTimer);
-    pauseTimer = setTimeout(() => (paused = false), PAUSE_MS);
-  };
-
-  /* -------- drag / touch -------- */
-  let dragging = false, startX = 0, startLeft = 0;
-
-  const startDrag = x => {
-    pause();
-    dragging = true;
-    startX = x;
-    startLeft = track.scrollLeft;
-  };
-  const doDrag = x => {
-    if (!dragging) return;
-    track.scrollLeft = startLeft - (x - startX);
-  };
-  const endDrag = () => (dragging = false);
-
-  track.addEventListener('mousedown', e => startDrag(e.clientX));
-  window.addEventListener('mousemove', e => doDrag(e.clientX));
-  window.addEventListener('mouseup',   endDrag);
-
-  track.addEventListener('touchstart', e => startDrag(e.touches[0].clientX), {passive:true});
-  track.addEventListener('touchmove',  e => { doDrag(e.touches[0].clientX); e.preventDefault(); }, {passive:false});
-  track.addEventListener('touchend',   endDrag);
-
-  /* simple click/tap also pauses */
-  track.addEventListener('click', pause);
-});
+    autoMove();
+  
+    /* -------- pause helpers -------- */
+    const pause = () => {
+      paused = true;
+      clearTimeout(pauseTimer);
+      pauseTimer = setTimeout(() => (paused = false), PAUSE_MS);
+    };
+  
+    /* -------- drag / touch -------- */
+    let dragging = false, startX = 0, startLeft = 0;
+  
+    const startDrag = x => {
+      pause();
+      dragging = true;
+      startX = x;
+      startLeft = track.scrollLeft;
+    };
+    const doDrag = x => {
+      if (!dragging) return;
+      track.scrollLeft = startLeft - (x - startX);
+    };
+    const endDrag = () => (dragging = false);
+  
+    track.addEventListener('mousedown', e => startDrag(e.clientX));
+    window.addEventListener('mousemove', e => doDrag(e.clientX));
+    window.addEventListener('mouseup',   endDrag);
+  
+    track.addEventListener('touchstart', e => startDrag(e.touches[0].clientX), {passive:true});
+    track.addEventListener('touchmove',  e => { doDrag(e.touches[0].clientX); e.preventDefault(); }, {passive:false});
+    track.addEventListener('touchend',   endDrag);
+  
+    /* simple click/tap also pauses */
+    track.addEventListener('click', pause);
+  });
+  

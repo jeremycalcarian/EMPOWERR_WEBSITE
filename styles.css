@@ -2,36 +2,106 @@
   Home Page CSS
 -----------------------------------*/
 .event-section {
-    background: var(--section-bg);
-    padding: 4rem 0;
-  }
-  .event-card {
-    background: var(--bg-color);
-    color: var(--text-color);
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-    text-align: center;
-  }
-  .event-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-  .event-date {
-    font-size: 1rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-  }
-  .event-desc {
-    color: var(--light-text);
-    margin-bottom: 1.5rem;
-  }
-  .event-card .btn {
-    padding: 0.75rem 2rem;
-  }
-  
+  background: var(--section-bg);
+  padding: 4rem 0;
+}
+
+/* Premium card */
+.event-card {
+  background: linear-gradient(145deg, var(--bg-color), rgba(255,255,255,0.02));
+  color: var(--text-color);
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: subtleShift 12s ease-in-out infinite alternate;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.25);
+}
+
+/* Gentle gradient shift animation */
+@keyframes subtleShift {
+  0% { background: linear-gradient(145deg, var(--bg-color), rgba(255,255,255,0.02)); }
+  100% { background: linear-gradient(145deg, var(--bg-color), rgba(255,255,255,0.07)); }
+}
+
+.event-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.event-date {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.event-desc {
+  color: var(--light-text);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Premium CTA button */
+.event-card .btn {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 40px;
+  background: #fff;
+  color: #000;
+  border: 2px solid var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Softer, slower halo */
+.event-card .btn::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(0,0,0,0.04) 15%,
+    transparent 30%,
+    transparent 60%,
+    rgba(0,0,0,0.04) 75%,
+    transparent 100%
+  );
+  border-radius: 60px;
+  filter: blur(3px);
+  animation: rotateHalo 28s linear infinite; /* slower */
+  z-index: -1;
+}
+
+@keyframes rotateHalo {
+  to { transform: rotate(360deg); }
+}
+
+.event-card .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
 
 /*-----------------------------------
   VARIABLES & GLOBALS

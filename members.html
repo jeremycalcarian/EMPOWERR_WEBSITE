@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>EMPOWERR – Members</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"><!-- keep your global styles -->
+  <link rel="stylesheet" href="styles.css">
 
   <style>
     /* ---------- base ---------- */
@@ -27,24 +27,8 @@ header {
   padding: 1rem 0;
 }
 
-header .logo {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin-left: 1rem;
-}
 
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0 .6rem;
-  font-size: .95rem;
-}
 
-.nav-links .active {
-  font-weight: 600;
-  border-bottom: 2px solid #00ff88;
-}
 
 h1 {
   font-size: 2.4rem;
@@ -90,7 +74,7 @@ p.sub {
 
 .photo {
   width: 100%;
-  height: 75%; /* keeps the image tall but leaves room for text */
+  height: 60%; /* keeps the image tall but leaves room for text */
   object-fit: cover;
   display: block;
 }
@@ -123,20 +107,24 @@ p.sub {
 </head>
 <body>
 
-  <!-- ===== Header / Navigation ===== -->
   <header class="header">
     <nav class="nav">
-      <div class="logo">EMPOWERR</div>
-      <ul class="nav-links" id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="members.html" class="active">Members</a></li>
-        <li><a href="gallery.html">Photo Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+        <div class="logo">EMPOWERR</div>
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="members.html" class = "active">Members</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 
   <!-- ===== Hero ===== -->
   <h1>Our Current Team</h1>
@@ -145,183 +133,273 @@ p.sub {
   <!-- ===== Members Grid ===== -->
   <div class="container">
     <div class="members-grid">
+      <!-- ===== President ===== -->
+<div class="member-card">
+  <img class="photo" src="headshots/headshot1.png" alt="Alex Johnson">
+  <div class="info">
+    <div class="member-name">Gabby Gatchalian</div>
+    <div class="role">President</div>
+  </div>
+</div>
 
-      <!-- repeat pattern for all 22 headshots -->
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot1.png" alt="Alex Johnson">
-        <div class="info">
-          <div class="member-name">Alex Johnson</div>
-          <div class="role">President &amp; Founder</div>
-        </div>
-      </div>
+<!-- ===== Vice President  ===== -->
+<div class="member-card">
+  <img class="photo" src="headshots/headshot17.JPEG" alt="Brian White">
+  <div class="info">
+    <div class="member-name">Lauren Ly</div>
+    <div class="role">Vice President</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot2.JPEG" alt="Sarah Lee">
-        <div class="info">
-          <div class="member-name">Sarah Lee</div>
-          <div class="role">Vice President</div>
-        </div>
-      </div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot3.JPEG" alt="Marcus Green">
-        <div class="info">
-          <div class="member-name">Marcus Green</div>
-          <div class="role">Treasurer</div>
-        </div>
-      </div>
+<!-- ===== Chairs ===== -->
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot4.JPEG" alt="Emily Davis">
-        <div class="info">
-          <div class="member-name">Emily Davis</div>
-          <div class="role">Secretary</div>
-        </div>
-      </div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot5.JPEG" alt="John Doe">
-        <div class="info">
-          <div class="member-name">John Doe</div>
-          <div class="role">Project Lead</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot10.JPEG" alt="Anna Chamberlin">
+  <div class="info">
+    <div class="member-name">Anna Chamberlin</div>
+    <div class="role">External Committee Chair</div>
+  </div>
+</div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot12.JPEG" alt="Betsy Vo">
+  <div class="info">
+    <div class="member-name">Betsy Vo</div>
+    <div class="role">Secretary</div>
+  </div>
+</div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot11.JPEG" alt="Felipe Albuquerque">
+  <div class="info">
+    <div class="member-name">Felipe Albuquerque</div>
+    <div class="role">Finance Committee Chair</div>
+  </div>
+</div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot25.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Rickena Bean</div>
+    <div class="role">Marketing Committee Chair</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot6.JPEG" alt="Jane Smith">
-        <div class="info">
-          <div class="member-name">Jane Smith</div>
-          <div class="role">Coordinator</div>
-        </div>
-      </div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot7.JPEG" alt="Michael Brown">
-        <div class="info">
-          <div class="member-name">Michael Brown</div>
-          <div class="role">Volunteer</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot14.JPEG" alt="Olivia Harris">
+  <div class="info">
+    <div class="member-name">Lena Cassessa</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot8.JPEG" alt="Linda Wilson">
-        <div class="info">
-          <div class="member-name">Linda Wilson</div>
-          <div class="role">Volunteer</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot9.JPEG" alt="Robert Taylor">
+  <div class="info">
+    <div class="member-name">Nina Dethdy</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot9.JPEG" alt="Robert Taylor">
-        <div class="info">
-          <div class="member-name">Robert Taylor</div>
-          <div class="role">Event Planner</div>
-        </div>
-      </div>
+<!-- ===== Members & Volunteer ===== -->
+<div class="member-card">
+  <img class="photo" src="headshots/headshot8.JPEG" alt=" Allen Anderson">
+  <div class="info">
+    <div class="member-name">Allen Anderson</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot10.JPEG" alt="Patricia Martinez">
-        <div class="info">
-          <div class="member-name">Patricia Martinez</div>
-          <div class="role">Marketing Lead</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot7.JPEG" alt="Anna Ramanan">
+  <div class="info">
+    <div class="member-name">Anna Ramanan</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot11.JPEG" alt="Daniel Garcia">
-        <div class="info">
-          <div class="member-name">Daniel Garcia</div>
-          <div class="role">Social Media Manager</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot18.JPEG" alt="Annabelle Fisher">
+  <div class="info">
+    <div class="member-name">Annabelle Fisher</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot12.JPEG" alt="Amy Chen">
-        <div class="info">
-          <div class="member-name">Amy Chen</div>
-          <div class="role">Outreach Coordinator</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot4.JPEG" alt="Amanda Haymes">
+  <div class="info">
+    <div class="member-name">Amanda Haymes</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot13.JPEG" alt="Chris Thompson">
-        <div class="info">
-          <div class="member-name">Chris Thompson</div>
-          <div class="role">Logistics Lead</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot6.JPEG" alt="Avi Patel">
+  <div class="info">
+    <div class="member-name">Avi Patel</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot14.JPEG" alt="Olivia Harris">
-        <div class="info">
-          <div class="member-name">Olivia Harris</div>
-          <div class="role">Fundraising Chair</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot15.JPEG" alt="Dahlia Vaccari">
+  <div class="info">
+    <div class="member-name">Dahlia Vaccari</div>
+    <div class="role">Marketing Committee Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot15.JPEG" alt="Jacob Lee">
-        <div class="info">
-          <div class="member-name">Jacob Lee</div>
-          <div class="role">Volunteer</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot23.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Eunice Nzi</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot16.JPEG" alt="Sophia Kim">
-        <div class="info">
-          <div class="member-name">Sophia Kim</div>
-          <div class="role">Volunteer</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot13.JPEG" alt="Evan Troxell">
+  <div class="info">
+    <div class="member-name">Evan Troxell</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot17.JPEG" alt="Brian White">
-        <div class="info">
-          <div class="member-name">Brian White</div>
-          <div class="role">Design Lead</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot13.JPEG" alt="Evan Troxell">
+  <div class="info">
+    <div class="member-name">Ethan Woadzro</div>
+    <div class="role">Marketing Committee Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot18.JPEG" alt="Emma Clark">
-        <div class="info">
-          <div class="member-name">Emma Clark</div>
-          <div class="role">Community Engagement</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot19.JPEG" alt="David Scott">
+  <div class="info">
+    <div class="member-name">Kia Hajbabaei</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot19.JPEG" alt="David Scott">
-        <div class="info">
-          <div class="member-name">David Scott</div>
-          <div class="role">Volunteer</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot3.JPEG" alt=" Katelyn Dawson">
+  <div class="info">
+    <div class="member-name">Katelyn Dawson</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot20.JPEG" alt="Isabella Perez">
-        <div class="info">
-          <div class="member-name">Isabella Perez</div>
-          <div class="role">Volunteer</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot2.JPEG" alt="Sarah Lee">
+  <div class="info">
+    <div class="member-name">Lucas Reidenbach</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot21.JPEG" alt="William Harris">
-        <div class="info">
-          <div class="member-name">William Harris</div>
-          <div class="role">Strategy Advisor</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot5.JPEG" alt="John Doe">
+  <div class="info">
+    <div class="member-name">Margaret Gatchalian</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
-      <div class="member-card">
-        <img class="photo" src="headshots/headshot22.JPEG" alt="Chloe Bennett">
-        <div class="info">
-          <div class="member-name">Chloe Bennett</div>
-          <div class="role">Operations Lead</div>
-        </div>
-      </div>
+<div class="member-card">
+  <img class="photo" src="headshots/headshot24.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Michaela Kadjemse</div>
+    <div class="role">Member</div>
+  </div>
+</div>
+
+<div class="member-card">
+  <img class="photo" src="headshots/headshot26.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Ruby Zhao</div>
+    <div class="role">External Committee Member</div>
+  </div>
+</div>
+
+<div class="member-card">
+  <img class="photo" src="headshots/headshot22.JPEG" alt="Jia Sandhu">
+  <div class="info">
+    <div class="member-name">Jia Sandhu</div>
+    <div class="role">Marketing Committee Member</div>
+  </div>
+</div>
+
+<div class="member-card">
+  <img class="photo" src="headshots/headshot16.JPEG" alt="Sophia Kim">
+  <div class="info">
+    <div class="member-name">Sofia Hallack</div>
+    <div class="role">Member</div>
+  </div>
+</div>
+
+<div class="member-card">
+  <img class="photo" src="headshots/headshot21.JPEG" alt="William Harris">
+  <div class="info">
+    <div class="member-name">Uzair Khan</div>
+    <div class="role">Member</div>
+  </div>
+</div>
+
+<div class="member-card">
+  <img class="photo" src="headshots/headshot27.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Zoe Burnett</div>
+    <div class="role">Member</div>
+  </div>
+</div>
+<div class="member-card">
+  <img class="photo" src="headshots/blankimage.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Walker Mason</div>
+    <div class="role">Member</div>
+  </div>
+</div>
+
+<div class="member-card">
+  <img class="photo" src="headshots/blankimage.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Gracy Nianga</div>
+    <div class="role">Member</div>
+  </div>
+</div>
+
+<div class="member-card">
+  <img class="photo" src="headshots/blankimage.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Emma Meroquinn Ontiveros</div>
+    <div class="role">Member</div>
+  </div>
+</div>
+
+<div class="member-card">
+  <img class="photo" src="headshots/blankimage.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Gabe Cassesa</div>
+    <div class="role">Member</div>
+  </div>
+</div>
+
+<div class="member-card">
+  <img class="photo" src="headshots/blankimage.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Jaeda Divine</div>
+    <div class="role">Member</div>
+  </div>
+</div>
+
+<div class="member-card">
+  <img class="photo" src="headshots/blankimage.JPEG" alt="Chloe Bennett">
+  <div class="info">
+    <div class="member-name">Katie Moser</div>
+    <div class="role">Member</div>
+  </div>
+</div>
 
     </div>
   </div>
