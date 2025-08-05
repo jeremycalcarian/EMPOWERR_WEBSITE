@@ -6,51 +6,43 @@
   <title>Empowerr 5K – Register</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* HERO */
-    .hero-reg {
-      background: url('images/5k-hero.jpg') center/cover no-repeat;
-      position: relative;
-      text-align: center;
-      padding: 7rem 1rem;
-      color: #fff;
-    }
-    .hero-reg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0,0,0,.6), rgba(0,0,0,.3));
-    }
-    .hero-reg .content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .hero-reg h1 {
-      font-size: 3.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary-color);
-    }
-    .hero-reg h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-    }
-    .hero-reg h3 {
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
-    .hero-reg .btn-cta {
-      padding: 1.1rem 3rem;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      box-shadow: 0 4px 15px rgba(0,91,181,0.4);
-      text-decoration: none;
-    }
-    /* Wide hero register button */
+   /* HERO */
+.hero-reg {
+  background: url('images/5k-hero.jpg') center/cover no-repeat;
+  position: relative;
+  text-align: center;
+  padding: 7rem 1rem;
+  color: #fff;
+}
+.hero-reg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,.6), rgba(0,0,0,.3));
+}
+.hero-reg .content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.hero-reg h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+.hero-reg h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.hero-reg h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
 .hero-reg .btn-cta {
   display: inline-block;
   padding: 1.2rem 4rem;
@@ -65,8 +57,6 @@
   overflow: hidden;
   z-index: 1;
 }
-
-/* Rotating soft halo */
 .hero-reg .btn-cta::before {
   content: "";
   position: absolute;
@@ -89,76 +79,178 @@
   animation: rotateHalo 12s linear infinite;
   z-index: -1;
 }
-
-/* Slow rotation */
 @keyframes rotateHalo {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-/* Hover lift */
 .hero-reg .btn-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
 }
 
+/* EVENT DESCRIPTION */
+.event-description {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--section-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+.event-description h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.75rem;
+  text-align: center;
+}
 
-    /* EVENT DESCRIPTION */
-    .event-description {
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: var(--section-bg);
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    .event-description h2 {
-      margin-top: 0;
-      color: var(--primary-color);
-      font-size: 1.75rem;
-      text-align: center;
-    }
+/* SECOND CTA */
+.cta-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+.cta-section .btn-cta {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+}
 
-    /* SECOND CTA */
-    .cta-section {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .cta-section .btn-cta {
-      font-size: 1.2rem;
-      padding: 1rem 2.5rem;
-    }
+/* COUNTDOWN */
+.countdown-section {
+  text-align: center;
+  margin: 3rem 0;
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.time-box {
+  background: var(--section-bg);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  min-width: 80px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.time-box .num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.time-box .label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--light-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.25rem;
+}
 
-    /* COUNTDOWN */
-    .countdown-section { text-align: center; margin: 3rem 0; }
-    .timer { display: flex; justify-content: center; gap: 1rem; }
-    .time-box { background: var(--section-bg); padding: 1rem 1.5rem; border-radius: 8px; min-width: 80px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
-    .time-box .num { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
-    .time-box .label { display: block; font-size: 0.75rem; color: var(--light-text); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.25rem; }
+/* SHARE */
+.share-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+.btn-secondary {
+  display: inline-block;
+  padding: 0.9rem 2.4rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .25s;
+}
+.btn-secondary:hover {
+  background: rgba(0,91,181,0.1);
+}
+.gofundme-btn {
+  display: inline-block;
+  padding: 0.9rem 2.4rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .25s;
+}
 
-    /* SHARE */
-    .share-section { text-align: center; margin: 2rem 0; }
-    .btn-secondary { display: inline-block; padding: 0.9rem 2.4rem; border: 2px solid var(--primary-color); border-radius: 10px; background: transparent; color: var(--primary-color); font-weight: 600; text-decoration: none; transition: background .25s; }
-    .btn-secondary:hover { background: rgba(0,91,181,0.1); }
-    .gofundme-btn {
-      display: inline-block; padding: 0.9rem 2.4rem; border: 2px solid var(--primary-color); border-radius: 10px; background: transparent; color: var(--primary-color); font-weight: 600; text-decoration: none; transition: background .25s; 
-    }
+/* DETAILS (UPDATED) */
+.details {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  background: var(--section-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.detail-grid dt {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+.detail-grid dd {
+  margin: 0;
+  color: var(--text-color);
+}
+.detail-grid div:last-child {
+  grid-column: span 2;
+}
+.secondary-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.btn-secondary.small {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s;
+}
+.btn-secondary.small:hover {
+  background: rgba(0,91,181,0.1);
+}
+.btn-gofundme {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  background: #02a95c; /* GoFundMe green */
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(2,169,92,0.4);
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-gofundme:hover {
+  background: #028a4d;
+  transform: translateY(-2px);
+}
 
-    /* DETAILS */
-    .details { max-width: 600px; margin: 0 auto 3rem; background: var(--section-bg); padding: 2rem; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
-    .details dt { font-weight: 600; color: var(--primary-color); margin-top: 0; }
-    .details dd { margin: 0; color: var(--text-color); }
-    .details a { grid-column: span 2; justify-self: start; margin-top: 1rem; }
-
-   /* TICKET CARDS – PREMIUM DARK STYLE */
+/* TICKET CARDS – PREMIUM DARK STYLE */
 .ticket-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
-
 .ticket-card {
   background: linear-gradient(160deg, #2b2b2b, #1e1e1e);
   padding: 2rem 1.5rem;
@@ -172,70 +264,167 @@
   justify-content: center;
   min-height: 160px;
 }
-
 .ticket-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.4);
 }
-
 .ticket-card h3 {
   margin-bottom: 0.4rem;
   color: #ffffff;
   font-size: 1.35rem;
   font-weight: 700;
 }
-
 .ticket-card p {
   color: rgba(255,255,255,0.85);
   font-size: 1rem;
   line-height: 1.4;
   margin: 0;
 }
-
-/* Optional subtle inner glow effect */
 .ticket-card:hover h3 {
   text-shadow: 0 0 8px rgba(255,255,255,0.2);
 }
 
+/* HOW IT WORKS */
+.how-it-works {
+  padding: 3rem 1rem;
+  background: var(--bg-color);
+  text-align: center;
+}
+.how-it-works h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+.steps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.step-card {
+  background: var(--section-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+.step-content p {
+  margin: 0;
+  color: var(--text-color);
+  line-height: 1.4;
+}
 
-    /* HOW IT WORKS */
-    .how-it-works { padding: 3rem 1rem; background: var(--bg-color); text-align: center; }
-    .how-it-works h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 1.5rem; }
-    .steps-grid { display: flex; flex-direction: column; gap: 1.5rem; max-width: 700px; margin: 0 auto; }
-    .step-card { background: var(--section-bg); border-radius: 12px; padding: 1.5rem; display: flex; align-items: flex-start; gap: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .step-number { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); flex-shrink: 0; }
-    .step-content p { margin: 0; color: var(--text-color); line-height: 1.4; }
+/* SPONSORS */
+.sponsors-section {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: var(--bg-color);
+}
+.sponsors-section h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.sponsors-section p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.sponsor-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.sponsors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+.sponsors img {
+  max-height: 60px;
+  filter: grayscale(100%) opacity(0.6);
+  transition: filter .3s, opacity .3s, transform .3s;
+}
+.sponsors img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+.sponsor-cta,
+.donate-cta {
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,91,181,0.4);
+  transition: transform .25s, background .25s;
+}
+.sponsor-cta {
+  background: var(--primary-color);
+  color: var(--bg-color);
+}
+.sponsor-cta:hover {
+  transform: translateY(-2px);
+}
+.donate-cta {
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+}
+.donate-cta:hover {
+  background: rgba(0,91,181,0.1);
+}
 
-    /* SPONSORS */
-    .sponsors-section { padding: 3rem 1rem; text-align: center; background: var(--bg-color); }
-    .sponsors-section h2 { font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem; }
-    .sponsors-section p { max-width: 600px; margin: 0 auto 1.5rem; color: var(--text-color); font-size: 1rem; line-height: 1.5; }
-    .sponsor-buttons { display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
-    .sponsors { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 2rem; align-items: center; justify-items: center; max-width: 800px; margin: 0 auto 2rem; }
-    .sponsors img { max-height: 60px; filter: grayscale(100%) opacity(0.6); transition: filter .3s, opacity .3s, transform .3s; }
-    .sponsors img:hover { filter: none; opacity: 1; transform: scale(1.05); }
-    .sponsor-cta, .donate-cta { padding: 1rem 2rem; border-radius: 30px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 15px rgba(0,91,181,0.4); transition: transform .25s, background .25s; }
-    .sponsor-cta { background: var(--primary-color); color: var(--bg-color); }
-    .sponsor-cta:hover { transform: translateY(-2px); }
-    .donate-cta { border: 2px solid var(--primary-color); background: transparent; color: var(--primary-color); }
-    .donate-cta:hover { background: rgba(0,91,181,0.1); }
+/* SEPARATE DONATE INFO SECTION */
+.donate-section {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background: var(--section-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.donate-section h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.75rem;
+}
+.donate-section p {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.donate-section a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
 
-    /* SEPARATE DONATE INFO SECTION */
-    .donate-section { max-width: 700px; margin: 2rem auto; padding: 2rem 1.5rem; background: var(--section-bg); border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); text-align: center; }
-    .donate-section h2 { margin-top: 0; color: var(--primary-color); font-size: 1.75rem; }
-    .donate-section p { color: var(--text-color); font-size: 1rem; line-height: 1.6; }
-    .donate-section a { color: var(--primary-color); text-decoration: underline; }
-
-    /* HERO COLLAB LINE */
+/* HERO COLLAB LINE */
 .collab-text {
-  font-size: 1.4rem; /* larger for prominence */
+  font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   letter-spacing: 0.5px;
   opacity: 0.95;
   text-transform: uppercase;
 }
-
 .rooted-highlight {
   color: #00ff88;
   text-shadow: 0 0 8px rgba(0, 255, 136, 0.9), 0 0 16px rgba(0, 255, 136, 0.6);
@@ -256,12 +445,10 @@
   transform: translateY(15px);
   animation: fadeUp 1s ease forwards;
 }
-
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.6s; }
 .delay-3 { animation-delay: 1s; }
 .delay-4 { animation-delay: 1.4s; }
-
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -295,13 +482,11 @@ section + section {
 .ticket-section {
   margin: 3rem auto;
 }
-
 .ticket-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* slightly wider cards */
-  gap: 2rem; /* more space between cards */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
-
 .ticket-card {
   background: linear-gradient(160deg, #2b2b2b, #1e1e1e);
   padding: 2.5rem 2rem;
@@ -313,28 +498,24 @@ section + section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 180px; /* slightly taller for balance */
+  min-height: 180px;
 }
-
 .ticket-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.4);
 }
-
 .ticket-card h3 {
   margin-bottom: 0.6rem;
   color: #ffffff;
   font-size: 1.4rem;
   font-weight: 700;
 }
-
 .ticket-card p {
   color: rgba(255,255,255,0.85);
   font-size: 1.05rem;
   line-height: 1.5;
   margin: 0;
 }
-
 .ticket-card:hover h3 {
   text-shadow: 0 0 8px rgba(255,255,255,0.2);
 }
@@ -457,6 +638,172 @@ section + section {
   max-height: 300px; /* plenty of room for text */
 }
 
+/* DETAILS CONTAINER FIX */
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+  background: var(--section-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+/* SMALL BUTTON ROW (View Race Map + Flyer) */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-secondary.small {
+  flex: 1 1 45%;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s;
+}
+
+.btn-secondary.small:hover {
+  background: rgba(0,91,181,0.1);
+}
+
+/* BIG GOFUNDME BUTTON AT BOTTOM */
+.btn-gofundme {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  background: #02a95c;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(2,169,92,0.4);
+  transition: background 0.3s, transform 0.2s;
+  margin-top: auto; /* pushes it to bottom */
+}
+
+.btn-gofundme:hover {
+  background: #028a4d;
+  transform: translateY(-2px);
+}
+
+/* Helping Mobile Folks */
+/* ========== MOBILE TWEAKS (≤ 768 px) ========== */
+@media (max-width: 768px) {
+
+/* general section padding */
+section,
+.event-description,
+.details,
+.donate-section,
+.faq-section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* hero */
+.hero-reg {
+  padding: 4rem 1rem 3rem;
+}
+.hero-reg h1      { font-size: 2.4rem; }
+.collab-text      { font-size: 1.1rem; }
+.impact-text      { font-size: 1rem;  }
+.hero-reg .btn-cta{
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+}
+
+/* nav links wrap under logo */
+.nav-links{
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+/* countdown timer boxes shrink slightly */
+.time-box{
+  min-width: 64px;
+  padding: 0.75rem 1rem;
+}
+.time-box .num   { font-size: 1.25rem; }
+
+/* details grid → single column */
+.detail-grid{
+  grid-template-columns: 1fr;
+}
+.detail-grid div:last-child{
+  grid-column: 1;
+}
+
+/* button rows wrap nicely */
+.secondary-buttons,
+.button-row{
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.btn-secondary.small{
+  flex: 1 1 100%;
+}
+
+/* ticket cards stack */
+.ticket-grid{
+  grid-template-columns: 1fr;
+}
+.ticket-card{
+  min-height: 0;        /* lets height follow content */
+  padding: 2rem 1.25rem;
+}
+
+/* “How it Works” step cards */
+.step-card{
+  flex-direction: column;
+  align-items: flex-start;
+}
+.step-number{
+  margin-bottom: 0.5rem;
+}
+
+/* sponsors grid → 2 per row */
+.sponsors{
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem 1rem;
+}
+
+/* faq spacing */
+.faq-question{ font-size: 1rem; }
+}
+/* ===== COUNTDOWN DIGIT ALIGNMENT ===== */
+.time-box{
+  display:flex;                /* keeps both rows perfectly centred */
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.time-box .num{
+  /* equal-width glyphs → no sideways jump when the value changes */
+  font-variant-numeric: tabular-nums;   /* Chrome/Firefox/Edge */
+  font-feature-settings: 'tnum';        /* Safari fallback       */
+
+  width: 2ch;            /* reserves space for two digits 00-99   */
+  display:inline-block;  /* lets the width rule take effect       */
+  text-align:center;
+}
+
+
 
 
 
@@ -464,16 +811,6 @@ section + section {
 
   </style>
 </head>
-<script>
-  (function() {
-    var password = prompt("Enter password to view this page:");
-    var correctPassword = "empowerr123"; // change this
-    if (password !== correctPassword) {
-      document.body.innerHTML = "<h2 style='text-align:center;margin-top:50px;'>Access Denied</h2>";
-      throw new Error("Unauthorized access");
-    }
-  })();
-</script>
 
 <body>
   <header class="header">
@@ -528,27 +865,30 @@ section + section {
   <div class="share-section">
     <a href="#" id="share-btn" class="btn-secondary">Share This Event</a>
   </div>
-
   <section class="details">
-    <div class="detail-item">
-      <dt>Date:</dt>
-      <dd>Sunday, August 24, 2025</dd>
+    <div class="detail-grid">
+      <div>
+        <dt>Date:</dt>
+        <dd>Sunday, August 24, 2025</dd>
+      </div>
+      <div>
+        <dt>Time:</dt>
+        <dd>5:00 PM – 7:00 PM</dd>
+      </div>
+      <div style="grid-column: span 2;">
+        <dt>Location:</dt>
+        <dd>North Hagerstown High School<br>1101 Eastern Blvd, Hagerstown, MD</dd>
+      </div>
     </div>
-    <div class="detail-item">
-      <dt>Time:</dt>
-      <dd>5:00 PM – 7:00 PM</dd>
+  
+    <div class="secondary-buttons">
+      <a href="race-map.html" class="btn-secondary small">View Race Map</a>
+      <a href="images/EMPOWERRRooted5kFlyer.jpg" target="_blank" class="btn-secondary small">View Our Flyer (PDF)</a>
     </div>
-    <div class="detail-item">
-      <dt>Location:</dt>
-      <dd>North Hagerstown High School<br>1101 Eastern Blvd, Hagerstown, MD</dd>
-    </div>
-    <div class="detail-item full-width button-row">
-      <a href="race-map.html" class="btn-secondary">View Race Map</a>
-      <a href="images/EMPOWERRRooted5kFlyer.jpg" target="_blank" class="btn-secondary">View Our Flyer (PDF)</a>
-      <a href="gofundme.com" target="_blank" class="gofundme-btn">Pay On GoFundMe </a>
-    </div>
-    </div>
+  
+    <a href='https://gofund.me/31d94c39' target="_blank" class="btn-gofundme">Pay On GoFundMe</a>
   </section>
+  
   
 
   <section class="ticket-section">
@@ -567,6 +907,22 @@ section + section {
         <div class="ticket-card"><h3>Day-Of Single</h3><p>Cash only at event – $20</p></div>
       </div>
     </div>
+  </section>
+
+  <section class="policy-section" style="max-width:800px;margin:3rem auto;padding:2rem;background:var(--section-bg);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+    <h2 style="color:var(--primary-color);text-align:center;margin-bottom:1rem;">Age & Registration Policy</h2>
+    <p style="color:var(--text-color);line-height:1.6;">
+      To keep the Empowerr 5K fair and safe for everyone, <strong>all participants must be registered</strong>, regardless of age. 
+      Children under 7 can participate for free, but must still have a completed registration form and signed waiver by a parent or guardian. 
+    </p>
+    <p style="color:var(--text-color);line-height:1.6;">
+      Age for free entry is based on the participant’s date of birth on race day. At bib pickup, event staff may request proof of age 
+      (such as a school ID, birth certificate copy, or other document) for children registered under this category.
+    </p>
+    <p style="color:var(--text-color);line-height:1.6;">
+      Any misrepresentation of age will result in <strong>disqualification without refund</strong>. These steps ensure that our 
+      free youth entries go to the intended participants and help us cover costs for the event.
+    </p>
   </section>
   
   
@@ -619,21 +975,7 @@ section + section {
       <a href="contact.html" class="sponsor-cta">Become a Sponsor</a>
     </div>
   </section>
-  <section class="policy-section" style="max-width:800px;margin:3rem auto;padding:2rem;background:var(--section-bg);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
-    <h2 style="color:var(--primary-color);text-align:center;margin-bottom:1rem;">Age & Registration Policy</h2>
-    <p style="color:var(--text-color);line-height:1.6;">
-      To keep the Empowerr 5K fair and safe for everyone, <strong>all participants must be registered</strong>, regardless of age. 
-      Children under 7 can participate for free, but must still have a completed registration form and signed waiver by a parent or guardian. 
-    </p>
-    <p style="color:var(--text-color);line-height:1.6;">
-      Age for free entry is based on the participant’s date of birth on race day. At bib pickup, event staff may request proof of age 
-      (such as a school ID, birth certificate copy, or other document) for children registered under this category.
-    </p>
-    <p style="color:var(--text-color);line-height:1.6;">
-      Any misrepresentation of age will result in <strong>disqualification without refund</strong>. These steps ensure that our 
-      free youth entries go to the intended participants and help us cover costs for the event.
-    </p>
-  </section>
+  
   
 
   <section class="faq-section">

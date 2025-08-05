@@ -199,6 +199,40 @@
   gap: 0.75rem;
 }
 
+ /* ——— Confirmation modal polish (incl. new button sizing) ——— */
+ #confirmation-modal{
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,.6); backdrop-filter:blur(2px);
+      align-items:center; justify-content:center;
+    }
+    .modal-card{
+      background:#fff; width:min(420px,90%); padding:2rem 2.25rem;
+      border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,.25);
+      animation:pop .25s ease-out;
+    }
+    @keyframes pop{0%{transform:scale(.95);opacity:0;}100%{transform:scale(1);opacity:1;}}
+    .modal-card h3{margin-top:0;font-size:1.45rem;color:#005bb5;text-align:center;}
+    .confirm-row{display:flex;justify-content:space-between;margin:.45rem 0;font-size:.95rem;}
+    .confirm-row span:first-child{font-weight:600;}
+
+    /* ——— NEW button tweaks ——— */
+    .modal-actions{
+      display:flex;
+      gap:.5rem;                 /* slightly tighter gap */
+      margin-top:1.75rem;
+    }
+    .modal-actions button{
+      flex:1;                    /* each takes 50 % of row */
+      padding:.65rem 0;          /* shorter height */
+      font-size:.95rem;
+    }
+    .btn-edit {
+      background: white;
+      color: black;
+      margin-bottom: 1rem;
+      border-width: 1.5px;
+      border: 2px solid black;
+    }
   </style>
 </head>
 <body>
@@ -207,62 +241,76 @@
     <h2>In Collaboration with Rooted</h2>
 
     <!-- Step 1: Registration Form -->
-    <form id="registration-form" class="step active">
-      <label for="hear">How did you hear about us?</label>
-      <select id="hear" name="hear" required>
-        <option value="">Select…</option>
-        <option>Social Media</option>
-        <option>Friend or Family</option>
-        <option>School or Club</option>
-        <option>Community Bulletin</option>
-        <option>Other</option>
-      </select>
+<form id="registration-form" class="step active">
+  <label for="hear">How did you hear about us?</label>
+  <select id="hear" name="hear" required>
+    <option value="">Select…</option>
+    <option value="Social Media">Social Media</option>
+    <option value="Friend or Family">Friend or Family</option>
+    <option value="School or Club">School or Club</option>
+    <option value="Community Bulletin">Community Bulletin</option>
+    <option value="Other">Other</option>
+  </select>
 
-      <label for="name">Full Name(s) - Everyone you are registering, including yourself</label>
-      <input id="name" name="name" type="text" required placeholder="Separate multiple names with commas">
+  <label for="name">Name(s) (First, Last)</label>
+  <input id="name" name="name" type="text" required placeholder="Separate multiple names with commas">
 
-      <label for="phone">Phone Number</label>
-      <input id="phone" name="phone" type="tel" required>
+  <label for="phone">Phone Number</label>
+  <input id="phone" name="phone" type="tel" required>
 
-      <label for="email">Email Address</label>
-      <input id="email" name="email" type="email" required>
+  <label for="email">Email Address</label>
+  <input id="email" name="email" type="email" required>
 
-      <label for="tier">Ticket Type</label>
-      <select id="tier" name="tier" required>
-        <option value="">Select…</option>
-        <option>Adult – $15</option>
-        <option>Double – $24</option>
-        <option>Quad – $44</option>
-      </select>
+  <label for="tier">Group Type</label>
+  <select id="tier" name="tier" required>
+    <option value="">Select…</option>
+    <option value="Single - $15">Single – $15</option>
+    <option value="Single (Cash Day-Of) - $20">Single (Cash Day-Of) – $20</option>
+    <option value="Double - $24">Double – $24</option>
+    <option value="Quadruplet - $44">Quadruplet – $44</option>
+  </select>
 
-      <label class="checkbox-label">
-        <input type="checkbox" id="waiver" name="waiver" required>
-        I have read and agree to the <a href="waiver.pdf" target="_blank">Waiver Agreement</a>
-      </label>
+  <label class="checkbox-label">
+    <input type="checkbox" id="waiver" name="waiver" required>
+    I have read and agreed to the <a href="/forms/5Kwaiver_form.pdf" target="_blank">Waiver Form</a>
+  </label>
 
-      <label for="questions">Questions / Concerns</label>
-      <textarea id="questions" name="questions" rows="4"></textarea>
+  <label for="questions">Questions / Concerns</label>
+  <textarea id="questions" name="questions" rows="4"></textarea>
 
-      <button type="submit" class="btn-primary">Submit Registration</button>
-    </form>
+  <button type="submit" class="btn-primary">Submit Registration</button>
+</form>
 
-    <!-- Step 2: Payment -->
+
+<!-- Step 2: Payment -->
 <div id="payment-step" class="step">
   <div class="step-header">
-    <h2><span class="lock-icon">Secure Your Payment</span></h2>
-    <p class="step-subtitle">Please complete your payment to reserve your spot.</p>
-  </div>
-  <div class="info-box">
-    <p><strong>How to Pay:</strong> Donate the ticket amount to our official GoFundMe page.</p>
-    <p class="warning-text">
-      Not donating will prevent you from participating in the event.
+    <h2><span class="lock-icon">Secure Your Spot</span></h2>
+    <p class="step-subtitle">
+      We’re so glad you’re joining us! We use GoFundMe because it’s safe, easy, 
+      and familiar to our community — and it’s helped us raise funds for past events that make a real impact.
     </p>
   </div>
+
+  <div class="info-box">
+    <p>
+      To finish your registration, simply donate your ticket amount through our 
+      official <strong>Empowerr 5K GoFundMe page</strong>. It’s quick, secure, 
+      and every dollar goes directly toward making this event possible.
+    </p>
+    <p style="color:#555; margin-top:0.5rem;">
+      Your contribution helps us cover event costs, support youth-led projects, 
+      and keep the Empowerr 5K going strong for years to come. We can’t wait to see you at the start line!
+    </p>
+  </div>
+
   <div class="btn-group">
     <button id="gofundme-btn" class="btn-primary">Go to GoFundMe</button>
-    <button id="donated-btn" class="btn-secondary">I've Donated</button>
+    <button id="donated-btn" class="btn-secondary">I’ve Already Donated</button>
   </div>
 </div>
+
+
 
 <!-- Step 3: Completion -->
 <div id="completion-step" class="step">
@@ -298,86 +346,134 @@
         <div class="circle" id="circle-3"></div>
         Complete
       </span>
-    </div>
     
   </div>
+  <div id="confirmation-modal">
+    <div class="modal-card">
+      <h3>Confirm Your Registration</h3>
 
-  <script>
-    const form = document.getElementById('registration-form');
-    const paymentStep = document.getElementById('payment-step');
-    const completionStep = document.getElementById('completion-step');
-    const progressBar = document.getElementById('progress-bar');
+      <div class="confirm-row"><span>Name:</span><span id="confirm-name"></span></div>
+      <div class="confirm-row"><span>Email:</span><span id="confirm-email"></span></div>
+      <div class="confirm-row"><span>Ticket:</span><span id="confirm-tier"></span></div>
+      <div class="confirm-row"><span>Price:</span><span id="confirm-price"></span></div>
+
+      <div class="modal-actions">
+        <button onclick="closeConfirmation()" class="btn-edit">Edit</button>
+        <button onclick="submitToGoogleForm()" class="btn-primary">Confirm &amp; Submit</button>
+      </div>
+    </div>
+  </div>
+
   
-    function setProgress(percent) {
-      progressBar.classList.remove('animate-once');
-      void progressBar.offsetWidth; // force reflow so animation can retrigger
-      progressBar.classList.add('animate-once');
-      progressBar.style.width = percent + '%';
-    }
-  
-    function setStepStatus(step) {
-      const circles = [
-        document.getElementById('circle-1'),
-        document.getElementById('circle-2'),
-        document.getElementById('circle-3')
-      ];
-  
-      circles.forEach((circle, index) => {
-        circle.classList.remove('active', 'completed');
-        if (index < step - 1) {
-          circle.classList.add('completed');
-        } else if (index === step - 1) {
-          circle.classList.add('active');
-        }
-      });
-    }
-  
-    function showStep(step) {
-      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-      step.classList.add('active');
-    }
-  
-    // Initial step
-    setStepStatus(1);
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-  
-      const data = new FormData();
-      data.append('entry.901783948', form.name.value);
-      data.append('entry.1243249204', form.email.value);
-      data.append('entry.59597137', form.tier.value);
-      data.append('entry.1111111111', form.hear.value);
-      data.append('entry.2222222222', form.phone.value);
-      data.append('entry.3333333333', form.waiver.checked ? 'Agreed' : 'Not Agreed');
-      data.append('entry.4444444444', form.questions.value);
-  
-      fetch('https://docs.google.com/forms/d/e/1FAIpQLSeVmwjS0UnQPrpr4trRf2UhKdnpnMcK9Pee-aO-hRa6aAOgqg/formResponse', {
-        method: 'POST',
-        mode: 'no-cors',
-        body: data
-      }).finally(() => {
-        showStep(paymentStep);
-        setProgress(50);
-        setStepStatus(2);
-      });
+<script>
+  /* ────────── DOM SHORTCUTS ────────── */
+  const form            = document.getElementById('registration-form');
+  const hearEl          = document.getElementById('hear');
+  const nameEl          = document.getElementById('name');
+  const phoneEl         = document.getElementById('phone');
+  const emailEl         = document.getElementById('email');
+  const tierEl          = document.getElementById('tier');
+  const waiverEl        = document.getElementById('waiver');
+  const qsEl            = document.getElementById('questions');
+
+  const confirmName     = document.getElementById('confirm-name');
+  const confirmEmail    = document.getElementById('confirm-email');
+  const confirmTier     = document.getElementById('confirm-tier');
+  const confirmPrice    = document.getElementById('confirm-price');
+  const confirmationModal = document.getElementById('confirmation-modal');
+
+  const paymentStep     = document.getElementById('payment-step');
+  const completionStep  = document.getElementById('completion-step');
+
+  const gofundmeBtn     = document.getElementById('gofundme-btn');
+  const donatedBtn      = document.getElementById('donated-btn');
+  const returnBtn       = document.getElementById('return-btn');
+
+  /* ────────── PROGRESS HELPERS ────────── */
+  function setProgress(p){ document.getElementById('progress-bar').style.width = p + '%'; }
+  function setStepStatus(step){
+    ['circle-1','circle-2','circle-3'].forEach((id,i)=>{
+      const c = document.getElementById(id);
+      c.classList.toggle('active',    i === step-1);
+      c.classList.toggle('completed', i <  step-1);
     });
-  
-    document.getElementById('gofundme-btn').addEventListener('click', () => {
-      window.open('https://www.gofundme.com/f/empowerr-5k', '_blank', 'noopener');
+  }
+  function showStep(el){ document.querySelectorAll('.step').forEach(s=>s.classList.remove('active')); el.classList.add('active'); }
+
+  /* initialise bar */
+  setProgress(0); setStepStatus(1);
+
+  /* ────────── 1. COLLECT DATA & OPEN MODAL ────────── */
+  let formData = {};
+
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+
+    const hear   = hearEl.value;
+    const name   = nameEl.value.trim();
+    const phone  = phoneEl.value.trim();
+    const email  = emailEl.value.trim();
+    const tier   = tierEl.value;
+    const waiver = waiverEl.checked;
+    const qs     = qsEl.value.trim();
+
+    if(!name || !email || !tier) return; // guard
+
+    formData = { hear, name, phone, email, tier, waiver, qs };
+
+    const priceMap = {
+      'Single - $15'               : '$15',
+      'Single (Cash Day-Of) - $20' : '$20',
+      'Double - $24'               : '$24',
+      'Quadruplet - $44'           : '$44'
+    };
+    confirmName .textContent = name;
+    confirmEmail.textContent = email;
+    confirmTier .textContent = tier;
+    confirmPrice.textContent = priceMap[tier] || '';
+
+    confirmationModal.style.display = 'flex';
+  });
+
+  /* ────────── 2. CLOSE MODAL WITHOUT SUBMIT ────────── */
+  function closeConfirmation(){ confirmationModal.style.display = 'none'; }
+
+  /* ────────── 3. BACKGROUND POST TO GOOGLE FORM ────────── */
+  function submitToGoogleForm(){
+    const data = new FormData();
+    data.append('entry.112301279',  formData.hear);
+    data.append('entry.1317701132', formData.name);
+    data.append('entry.1542120479', formData.phone);
+    data.append('entry.1972516816', formData.email);
+    data.append('entry.1696998993', formData.tier);
+    data.append('entry.1764311184', formData.waiver
+                                    ? 'I have read and agreed to the Waiver Form'
+                                    : 'Not Agreed');
+    data.append('entry.501314018',  formData.qs);
+
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSefPuunXU0Xl75pUjI_MXGauwfrzZW2pKUdN_VbVx4OHJ5SgQ/formResponse', {
+      method: 'POST',
+      mode  : 'no-cors',
+      body  : data
+    }).finally(()=>{
+      closeConfirmation();          // hide modal
+      showStep(paymentStep);        // advance to Step 2
+      setProgress(50); setStepStatus(2);
     });
+  }
+
+  /* ────────── 4. OTHER BUTTONS ────────── */
+  gofundmeBtn.addEventListener('click', ()=>window.open(
+    'https://gofund.me/31d94c39','_blank','noopener'));
+
+  donatedBtn.addEventListener('click', ()=>{
+    showStep(completionStep);
+    setProgress(100); setStepStatus(3);
+  });
+
+  returnBtn.addEventListener('click', ()=>location.href='index.html');
+</script>
   
-    document.getElementById('donated-btn').addEventListener('click', () => {
-      showStep(completionStep);
-      setProgress(100);
-      setStepStatus(3);
-    });
-  
-    document.getElementById('return-btn').addEventListener('click', () => {
-      window.location.href = 'register.html';
-    });
-  </script>
-  
-  
+
 </body>
 </html>
