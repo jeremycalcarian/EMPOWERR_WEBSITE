@@ -1083,5 +1083,28 @@ document.getElementById('gofundme-btn').addEventListener('click', () => {
 
   gtag('config', 'G-0G5XESPTG0');
 </script>
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+    // Update a11y attribute
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+    hamburger.setAttribute('aria-expanded', !expanded);
+  });
+
+  /* (Optional) close menu after clicking a link on mobile */
+  document.querySelectorAll('.nav-links a').forEach(link =>
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('active')){
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded','false');
+      }
+    })
+  );
+</script>
 </body>
 </html>
