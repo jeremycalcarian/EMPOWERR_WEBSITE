@@ -264,10 +264,10 @@
   <label for="tier">Group Type</label>
   <select id="tier" name="tier" required>
     <option value="">Select…</option>
-    <option value="Single - $15">Single – $15</option>
-    <option value="Single (Cash Day-Of) - $20">Single (Cash Day-Of) – $20</option>
-    <option value="Double - $24">Double – $24</option>
-    <option value="Quadruplet - $44">Quadruplet – $44</option>
+    <option value="Single - $8">Single – $8</option>
+    <option value="Single (Cash Day-Of) - $15">Single (Cash Day-Of) – $15</option>
+    <option value="Double - $15">Double – 15$</option>
+    <option value="Quadruplet - $28">Quadruplet – $28</option>
   </select>
 
   <label class="checkbox-label">
@@ -422,10 +422,10 @@
     formData = { hear, name, phone, email, tier, waiver, qs };
 
     const priceMap = {
-      'Single - $15'               : '$15',
-      'Single (Cash Day-Of) - $20' : '$20',
-      'Double - $24'               : '$24',
-      'Quadruplet - $44'           : '$44'
+      'Single - $8'               : '$8',
+      'Single (Cash Day-Of) - $15' : '$15',
+      'Double - $15'               : '$15',
+      'Quadruplet - $28'           : '$28'
     };
     confirmName .textContent = name;
     confirmEmail.textContent = email;
