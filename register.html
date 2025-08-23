@@ -322,8 +322,7 @@
   color: var(--text-color);
   line-height: 1.4;
 }
-
-/* SPONSORS */
+/*/* ===== SPONSORS (drop-in replacement) ===== */
 .sponsors-section {
   padding: 3rem 1rem;
   text-align: center;
@@ -341,31 +340,16 @@
   font-size: 1rem;
   line-height: 1.5;
 }
+
+/* Buttons row (kept intact) */
 .sponsor-buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
   margin-bottom: 2rem;
 }
-.sponsors {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 2rem;
-  align-items: center;
-  justify-items: center;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-}
-.sponsors img {
-  max-height: 60px;
-  filter: grayscale(100%) opacity(0.6);
-  transition: filter .3s, opacity .3s, transform .3s;
-}
-.sponsors img:hover {
-  filter: none;
-  opacity: 1;
-  transform: scale(1.05);
-}
+
+/* Button styles (kept intact) */
 .sponsor-cta,
 .donate-cta {
   padding: 1rem 2rem;
@@ -391,29 +375,55 @@
   background: rgba(0,91,181,0.1);
 }
 
-/* SEPARATE DONATE INFO SECTION */
-.donate-section {
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 2rem 1.5rem;
-  background: var(--section-bg);
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-  text-align: center;
+/* Uniform logo grid */
+.sponsors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;        /* each grid cell same height */
+  justify-items: stretch;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
 }
-.donate-section h2 {
-  margin-top: 0;
-  color: var(--primary-color);
-  font-size: 1.75rem;
+
+/* Centered, equal-height cells for consistent alignment */
+.sponsor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  height: 90px;                /* controls row height */
+  background: transparent;     /* change to var(--section-bg) for tiles */
+  border-radius: 10px;
 }
-.donate-section p {
-  color: var(--text-color);
-  font-size: 1rem;
-  line-height: 1.6;
+
+/* Logos scale without distortion, stay centered */
+.sponsor img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: grayscale(100%) opacity(0.65);
+  transition: filter .3s, opacity .3s, transform .3s;
 }
-.donate-section a {
-  color: var(--primary-color);
-  text-decoration: underline;
+
+/* Hover effect for logos */
+.sponsor img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .sponsors {
+    gap: 1rem;
+  }
+  .sponsor {
+    height: 72px;
+  }
 }
 
 /* HERO COLLAB LINE */
@@ -976,11 +986,15 @@ section,
   <section class="sponsors-section">
     <h2>Our Generous Sponsors</h2>
     <p>These organizations already support us. Want to sponsor the Empowerr 5K? <a href="contact.html">Contact us</a>.</p>
+  
     <div class="sponsors">
-      <img src="images/lightsome_logo.png" alt="Lightsome">
-      <img src="images/hub_city_nutrition.png" alt="Hub City Nutrition">
-      <img src="images/community_foundation.png" alt="Community Foundation">
+      <div class="sponsor"><img src="images/lightsome_logo.png" alt="Lightsome" loading="lazy"></div>
+      <div class="sponsor"><img src="images/hub_city_nutrition.png" alt="Hub City Nutrition" loading="lazy"></div>
+      <div class="sponsor"><img src="images/community_foundation.png" alt="Community Foundation" loading="lazy"></div>
+      <div class="sponsor"><img src="images/alekos2go-logo.png" alt="Alekos 2 Go" loading="lazy"></div>
+      <div class="sponsor"><img src="images/negleys_water.png" alt="Negleys Water" loading="lazy"></div>
     </div>
+  
     <div class="sponsor-buttons">
       <a href="contact.html" class="sponsor-cta">Become a Sponsor</a>
     </div>
